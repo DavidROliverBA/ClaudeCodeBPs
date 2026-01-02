@@ -2,6 +2,21 @@
 
 A comprehensive collection of best practices, guides, and documentation for using Claude Code effectively. This repository covers everything from basic configuration to advanced workflows, compiled from Anthropic's official documentation, community expertise, and real-world usage patterns.
 
+## Organisational Implementation Guide
+
+**New to rolling out Claude Code across your organisation?**
+
+Start with our comprehensive **[Organisational Implementation Guide](docs/00-organisational-implementation-guide.md)** — a step-by-step guide covering:
+
+- Assessment and planning for enterprise adoption
+- Establishing configuration standards and governance
+- Running pilot programmes and collecting feedback
+- Organisation-wide rollout strategies
+- Continuous improvement cycles and metrics
+- Templates, checklists, and governance frameworks
+
+---
+
 ## Table of Contents
 
 ### Core Configuration
@@ -59,25 +74,28 @@ A comprehensive collection of best practices, guides, and documentation for usin
 
 ## Quick Start
 
-1. **New to Claude Code?** Start with [CLAUDE.md Files](docs/core-configuration/01-claude-md-files.md) and [Effective Prompting](docs/prompting-interaction/04-effective-prompting.md)
+1. **Rolling out across your organisation?** Start with the [Organisational Implementation Guide](docs/00-organisational-implementation-guide.md)
 
-2. **Setting up a team project?** Read [Settings Hierarchy](docs/core-configuration/02-settings-hierarchy.md) and [Permissions Management](docs/core-configuration/03-permissions-management.md)
+2. **New to Claude Code?** Start with [CLAUDE.md Files](docs/core-configuration/01-claude-md-files.md) and [Effective Prompting](docs/prompting-interaction/04-effective-prompting.md)
 
-3. **Want to automate workflows?** Check out [Custom Slash Commands](docs/automation-workflows/08-custom-slash-commands.md) and [Hooks](docs/automation-workflows/09-hooks.md)
+3. **Setting up a team project?** Read [Settings Hierarchy](docs/core-configuration/02-settings-hierarchy.md) and [Permissions Management](docs/core-configuration/03-permissions-management.md)
 
-4. **Optimising costs?** See [Model Selection](docs/quality-cost/20-model-selection.md) and [Context Management](docs/quality-cost/22-context-management.md)
+4. **Want to automate workflows?** Check out [Custom Slash Commands](docs/automation-workflows/08-custom-slash-commands.md) and [Hooks](docs/automation-workflows/09-hooks.md)
+
+5. **Optimising costs?** See [Model Selection](docs/quality-cost/20-model-selection.md) and [Context Management](docs/quality-cost/22-context-management.md)
 
 ## Document Statistics
 
 | Category | Documents | Total Words (approx) |
 |----------|-----------|---------------------|
+| Organisational Implementation | 1 | ~8,000 |
 | Core Configuration | 3 | ~10,000 |
 | Prompting & Interaction | 4 | ~12,000 |
 | Automation & Workflows | 4 | ~20,000 |
 | Advanced Usage | 4 | ~22,000 |
 | Development Practices | 4 | ~18,000 |
 | Quality & Cost Optimisation | 4 | ~16,000 |
-| **Total** | **23** | **~98,000** |
+| **Total** | **24** | **~106,000** |
 
 ## Sources
 
