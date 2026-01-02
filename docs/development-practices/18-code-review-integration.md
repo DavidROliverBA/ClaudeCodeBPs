@@ -7,10 +7,10 @@ Claude Code is an agentic AI coding assistant that provides sophisticated code r
 ## Table of Contents
 
 1. [Configuring claude-code-review.yml for PR Reviews](#configuring-claude-code-reviewyml-for-pr-reviews)
-2. [Customizing Review Focus Areas](#customizing-review-focus-areas)
+2. [Customising Review Focus Areas](#customising-review-focus-areas)
 3. [Automated Review in CI/CD Pipelines](#automated-review-in-cicd-pipelines)
 4. [Review Comment Formatting](#review-comment-formatting)
-5. [Severity Levels and Categorization](#severity-levels-and-categorization)
+5. [Severity Levels and Categorisation](#severity-levels-and-categorisation)
 6. [Integration with GitHub and GitLab](#integration-with-github-and-gitlab)
 7. [Custom Review Rules and Checks](#custom-review-rules-and-checks)
 8. [Best Practices for AI-Assisted Code Review](#best-practices-for-ai-assisted-code-review)
@@ -41,7 +41,7 @@ When you set up the integration, Claude creates a `claude-code-review.yml` file 
 name: Claude Code Review
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronise]
 
 jobs:
   review:
@@ -61,9 +61,9 @@ jobs:
           claude_args: "--max-turns 5"
 ```
 
-### Customizing the Prompt
+### Customising the Prompt
 
-The default configuration can be verbose, commenting on minor issues. To focus on what matters most, customize the `prompt` field:
+The default configuration can be verbose, commenting on minor issues. To focus on what matters most, customise the `prompt` field:
 
 ```yaml
 # Example: Security-Focused Review
@@ -99,7 +99,7 @@ You can configure when reviews run based on specific conditions:
 # Only review PRs that modify specific paths
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronise]
     paths:
       - 'src/**'
       - 'lib/**'
@@ -122,11 +122,11 @@ jobs:
 
 ---
 
-## Customizing Review Focus Areas
+## Customising Review Focus Areas
 
 ### The CLAUDE.md File
 
-The single most important configuration for customizing Claude's behavior is the `CLAUDE.md` file at your repository root. This file serves as Claude's "constitution" for understanding your project.
+The single most important configuration for customising Claude's behaviour is the `CLAUDE.md` file at your repository root. This file serves as Claude's "constitution" for understanding your project.
 
 **Location Hierarchy:**
 1. `~/.claude/CLAUDE.md` (home directory - applies to all projects)
@@ -172,9 +172,9 @@ When reviewing code, focus on:
 - Confirm environment variables are used (not hardcoded values)
 ```
 
-### Agent-Specific Customization
+### Agent-Specific Customisation
 
-The code review plugin uses four parallel agents that can be customized in `.claude/commands/code-review.md`:
+The code review plugin uses four parallel agents that can be customised in `.claude/commands/code-review.md`:
 
 ```markdown
 # Code Review Command
@@ -199,7 +199,7 @@ Look for obvious bugs in changed code only:
 Confidence threshold: 85
 
 ## Agent 4: Context Analysis
-Analyze git history and surrounding code:
+Analyse git history and surrounding code:
 - Does this change break existing functionality?
 - Are there similar patterns elsewhere that should be updated?
 - Does commit history reveal intent we should preserve?
@@ -220,7 +220,7 @@ Claude Code integrates seamlessly with GitHub Actions to provide automated revie
 name: Automated Claude Review
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [opened, synchronise, reopened]
 
 jobs:
   security-review:
@@ -394,9 +394,9 @@ Claude Code provides two output modes:
 - Appears inline on specific lines
 - Enables team discussion
 
-### Customizing Comment Format
+### Customising Comment Format
 
-You can customize the output format by editing `.claude/commands/code-review.md`:
+You can customise the output format by editing `.claude/commands/code-review.md`:
 
 ```markdown
 For each issue found, output in this format:
@@ -418,7 +418,7 @@ For each issue found, output in this format:
 
 ---
 
-## Severity Levels and Categorization
+## Severity Levels and Categorisation
 
 ### Confidence-Based Scoring System
 
@@ -434,7 +434,7 @@ Claude Code uses a 0-100 confidence score to filter false positives:
 
 **Default Threshold**: 80 (only issues scoring 80+ are reported)
 
-**Customizing Threshold**:
+**Customising Threshold**:
 ```markdown
 # In .claude/commands/code-review.md
 Filter out any issues with a score less than 85.
@@ -442,7 +442,7 @@ Filter out any issues with a score less than 85.
 
 ### Security Severity Levels
 
-For security reviews, Claude categorizes vulnerabilities by severity:
+For security reviews, Claude categorises vulnerabilities by severity:
 
 | Severity | Description | Examples |
 |----------|-------------|----------|
@@ -464,11 +464,11 @@ Claude's `/security-review` command checks for these categories:
 - NoSQL injection
 - XXE (XML External Entity)
 
-**Authentication & Authorization:**
+**Authentication & Authorisation:**
 - Broken authentication
 - Privilege escalation
 - Insecure direct object references
-- Authorization bypass logic
+- Authorisation bypass logic
 - Session management flaws
 
 **Data Exposure:**
@@ -536,7 +536,7 @@ Create `.github/workflows/claude.yml`:
 name: Claude Code Assistant
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronise]
   issue_comment:
     types: [created]
 
@@ -656,7 +656,7 @@ permissions:
 
 **Security Best Practices:**
 - Always store API keys as encrypted secrets
-- Use organization-level secrets for team-wide access
+- Use organisation-level secrets for team-wide access
 - Rotate API keys periodically
 - Enable branch protection rules
 - Require human approval before merging Claude's suggestions
@@ -685,10 +685,10 @@ Review this pull request with a focus on frontend best practices:
 - Do images have alt text?
 - Is proper semantic HTML used?
 - Are ARIA labels used correctly?
-- Is color contrast sufficient (WCAG AA)?
+- Is colour contrast sufficient (WCAG AA)?
 
 ## Performance
-- Are images optimized and lazy-loaded?
+- Are images optimised and lazy-loaded?
 - Are there unnecessary re-renders in React components?
 - Is code-splitting implemented appropriately?
 - Are there memory leaks in useEffect hooks?
@@ -717,7 +717,7 @@ Create `.claude/commands/migration-review.md`:
 ```markdown
 # Database Migration Review
 
-Analyze this database migration for safety and correctness:
+Analyse this database migration for safety and correctness:
 
 ## Safety Checks
 - Are destructive operations (DROP, DELETE) necessary and justified?
@@ -762,7 +762,7 @@ Before any Bash command that includes "git commit":
 2. Check that all tests pass
 3. If tests fail:
    - DO NOT proceed with commit
-   - Analyze failures
+   - Analyse failures
    - Fix issues
    - Re-run tests
 4. Only allow commit if tests are green
@@ -816,8 +816,8 @@ Focus:
 Exclusions: Pre-existing bugs, style issues
 Confidence threshold: 85
 
-## Agent 4: Historical Context Analyzer
-Task: Analyze git history and surrounding code
+## Agent 4: Historical Context Analyser
+Task: Analyse git history and surrounding code
 Focus:
 - Breaking changes to existing functionality
 - Inconsistencies with established patterns
@@ -829,7 +829,7 @@ Confidence threshold: 75
 - Combine findings from all agents
 - De-duplicate similar issues
 - Filter by confidence threshold
-- Prioritize by severity
+- Prioritise by severity
 - Output sorted by file and line number
 ```
 
@@ -870,11 +870,11 @@ easy to understand and maintain. Functions should not be too long...
 - Let Claude catch obvious bugs and security issues
 - Have humans review Claude's findings for context
 - Require human approval for all merges
-- Use Claude to augment, not replace, human judgment
+- Use Claude to augment, not replace, human judgement
 
 **Real-world results**: Graphite found that Claude met their standards for code review after testing against 500 pull requests, including synthetic and real-world examples with known bugs that even experienced engineers struggled to spot.
 
-### 3. Customize Reviews for Your Workflow
+### 3. Customise Reviews for Your Workflow
 
 **Strategy**:
 - Create project-specific review commands in `.claude/commands/`
@@ -922,7 +922,7 @@ on: [push]
 # Optimal: Reviews only PR changes
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronise]
     paths:
       - 'src/**'
       - '!**/*.md'
@@ -937,7 +937,7 @@ on:
 - Track false positive rates and adjust thresholds
 - Regularly audit Claude's review quality
 
-### 7. Use Severity Levels to Prioritize
+### 7. Use Severity Levels to Prioritise
 
 **Workflow**:
 1. **Critical/High**: Must fix before merge
@@ -988,7 +988,7 @@ Can be deferred:
 **Best Practices**:
 - Never commit API keys; use secret management
 - Review Claude's suggestions before merging (security audit)
-- Use organization secrets for team-wide access
+- Use organisation secrets for team-wide access
 - Rotate API keys periodically
 - For sensitive code, use on-premise models (Bedrock/Vertex)
 - Ensure compliance with data handling policies
@@ -1004,7 +1004,7 @@ Can be deferred:
 
 ## Conclusion
 
-Claude Code transforms code review from a time-consuming bottleneck into an efficient, automated process that catches bugs, security vulnerabilities, and architectural issues that humans often miss. By following the configuration strategies, customization techniques, and best practices outlined in this guide, teams can:
+Claude Code transforms code review from a time-consuming bottleneck into an efficient, automated process that catches bugs, security vulnerabilities, and architectural issues that humans often miss. By following the configuration strategies, customisation techniques, and best practices outlined in this guide, teams can:
 
 - **Reduce review time** by 40x (as demonstrated by Graphite)
 - **Catch critical security issues** before they reach production
@@ -1012,7 +1012,7 @@ Claude Code transforms code review from a time-consuming bottleneck into an effi
 - **Free up senior developers** to focus on high-value architectural decisions
 - **Accelerate development velocity** without sacrificing quality
 
-The key to success is thoughtful configuration: customize CLAUDE.md for your project, create focused review commands for different scenarios, integrate seamlessly with CI/CD pipelines, and use Claude as a powerful augmentation to human expertise rather than a replacement.
+The key to success is thoughtful configuration: customise CLAUDE.md for your project, create focused review commands for different scenarios, integrate seamlessly with CI/CD pipelines, and use Claude as a powerful augmentation to human expertise rather than a replacement.
 
 Start with the quick setup (`/install-github-app`), experiment with custom prompts, and iteratively refine your configuration based on what works for your team. The investment in proper setup pays dividends in every pull request.
 
@@ -1038,7 +1038,7 @@ Start with the quick setup (`/install-github-app`), experiment with custom promp
 
 ### Best Practices and Tutorials
 - [Claude Code: Best practices for agentic coding](https://www.anthropic.com/engineering/claude-code-best-practices)
-- [Using CLAUDE.MD files: Customizing Claude Code](https://claude.com/blog/using-claude-md-files)
+- [Using CLAUDE.MD files: Customising Claude Code](https://claude.com/blog/using-claude-md-files)
 - [Writing a good CLAUDE.md](https://www.humanlayer.dev/blog/writing-a-good-claude-md)
 - [How I use Claude Code (+ my best tips)](https://www.builder.io/blog/claude-code)
 - [awesome-claude-code Repository](https://github.com/hesreallyhim/awesome-claude-code)

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Test-Driven Development (TDD) becomes even more powerful when combined with AI-powered agentic coding. Claude Code excels at TDD workflows, transforming what was traditionally a labor-intensive best practice into an accelerator for building robust, maintainable applications. This guide explores how to leverage Claude Code for comprehensive test coverage and effective TDD workflows.
+Test-Driven Development (TDD) becomes even more powerful when combined with AI-powered agentic coding. Claude Code excels at TDD workflows, transforming what was traditionally a labour-intensive best practise into an accelerator for building robust, maintainable applications. This guide explores how to leverage Claude Code for comprehensive test coverage and effective TDD workflows.
 
 ## 1. Leveraging Claude for Robust Test Coverage
 
@@ -12,12 +12,12 @@ Claude Code excels at writing comprehensive unit tests and is considered by many
 
 **Clear, Verifiable Targets**: Claude performs best when it has a clear target to iterate against. Tests provide this explicit verification point, allowing Claude to make changes, evaluate results, and incrementally improve its code. The automated feedback loop provided by running tests means Claude can self-correct and iterate much faster, significantly reducing the human intervention needed for debugging.
 
-**Comprehensive Edge Case Coverage**: When generating tests, Claude covers edge cases, boundary conditions, and error scenarios that developers often overlook. This is particularly valuable because AI can generate boilerplate, edge cases, and entire test files in seconds, turning TDD's biggest weakness—the manual labor of writing tests—into a massive accelerator.
+**Comprehensive Edge Case Coverage**: When generating tests, Claude covers edge cases, boundary conditions, and error scenarios that developers often overlook. This is particularly valuable because AI can generate boilerplate, edge cases, and entire test files in seconds, turning TDD's biggest weakness—the manual labour of writing tests—into a massive accelerator.
 
 ### Best Practices for Test Coverage
 
 ```bash
-# Ask Claude to analyze and test a specific module
+# Ask Claude to analyse and test a specific module
 "Write comprehensive unit tests for the user authentication module,
 including edge cases for invalid inputs, session expiration,
 and concurrent login attempts"
@@ -29,11 +29,11 @@ and concurrent login attempts"
 - Request tests for specific scenarios: happy path, edge cases, error conditions
 - Ask for boundary testing and input validation
 - Include tests for concurrent operations and race conditions
-- Request security-focused tests for authentication and authorization
+- Request security-focused tests for authentication and authorisation
 
 ## 2. TDD Workflow with Claude Code
 
-Test-Driven Development is an **Anthropic-favorite workflow** for changes that are easily verifiable with unit, integration, or end-to-end tests. The recommended workflow follows these sequential steps:
+Test-Driven Development is an **Anthropic-favourite workflow** for changes that are easily verifiable with unit, integration, or end-to-end tests. The recommended workflow follows these sequential steps:
 
 ### The Five-Step TDD Process
 
@@ -91,7 +91,7 @@ The test-first approach provides several critical benefits when working with Cla
 
 ### Enforcing Test-First Discipline
 
-**Project Configuration**: The key to consistent TDD behavior is embedding it directly into your project's `CLAUDE.md` file:
+**Project Configuration**: The key to consistent TDD behaviour is embedding it directly into your project's `CLAUDE.md` file:
 
 ```markdown
 # CLAUDE.md
@@ -221,12 +221,12 @@ validatePassword function, covering:
 - Unicode and emoji handling"
 ```
 
-### Test Organization
+### Test Organisation
 
 Request well-structured test files:
 
 ```bash
-"Organize the test suite with:
+"Organise the test suite with:
 - Clear describe() blocks for each method
 - beforeEach() setup for common test data
 - afterEach() cleanup for database state
@@ -285,7 +285,7 @@ describe('Recipe Deletion Feature', () => {
   it('should delete recipe when confirmed', () => {
     cy.visit('/recipes/123');
     cy.get('[data-testid="delete-button"]').click();
-    cy.get('[data-testid="confirm-dialog"]').should('be.visible');
+    cy.get('[data-testid="confirm-dialogue"]').should('be.visible');
     cy.get('[data-testid="confirm-delete"]').click();
     cy.url().should('eq', '/recipes');
     cy.contains('Recipe deleted successfully');
@@ -293,7 +293,7 @@ describe('Recipe Deletion Feature', () => {
 });
 ```
 
-**Playwright Agents Integration**: Playwright now ships with three specialized agents (the planner, generator, and healer) that improve Claude Code's baseline test engineering capabilities. These subagents can explore your application on their own and even fix their own mistakes.
+**Playwright Agents Integration**: Playwright now ships with three specialised agents (the planner, generator, and healer) that improve Claude Code's baseline test engineering capabilities. These subagents can explore your application on their own and even fix their own mistakes.
 
 ### When to Choose Each Approach
 
@@ -317,7 +317,7 @@ Tests require ongoing maintenance as your codebase evolves. Claude Code can help
 "The User model now includes a 'role' field with values 'admin', 'user', 'guest'.
 Update all user-related tests to:
 1. Include role in test fixtures
-2. Add tests for role-based authorization
+2. Add tests for role-based authorisation
 3. Update assertions that check user serialization
 4. Ensure backward compatibility tests pass"
 ```
@@ -351,7 +351,7 @@ Use automated hooks to maintain quality:
 
 ```bash
 "Run the test suite 10 times and identify any flaky tests.
-For each flaky test, analyze:
+For each flaky test, analyse:
 - Is it timing-dependent?
 - Does it rely on external state?
 - Are there race conditions?
@@ -363,7 +363,7 @@ Then fix the root causes."
 ### Pattern 1: Fixture-Based Testing
 
 ```python
-# Request well-organized fixtures
+# Request well-organised fixtures
 "Create pytest fixtures for user testing:
 - user_data: dict with valid user attributes
 - create_user: factory function for database users
@@ -491,7 +491,7 @@ jobs:
 **Solution**:
 ```bash
 "Implement ONLY the minimum code needed to pass the current tests.
-Do not add features, error handling, or optimizations beyond
+Do not add features, error handling, or optimisations beyond
 what the tests verify. We'll add those in subsequent TDD cycles."
 ```
 
@@ -512,7 +512,7 @@ that use real implementations of:
 - Database connections
 - API clients
 - File system operations
-Verify the mocked behavior matches reality."
+Verify the mocked behaviour matches reality."
 ```
 
 ### Pitfall 4: Brittle Tests
@@ -521,7 +521,7 @@ Verify the mocked behavior matches reality."
 
 **Solution**:
 ```bash
-"Write tests that verify behavior, not implementation details.
+"Write tests that verify behaviour, not implementation details.
 - Test public APIs, not private methods
 - Use data attributes, not CSS selectors
 - Assert on outcomes, not intermediate steps"
@@ -544,7 +544,7 @@ Verify the mocked behavior matches reality."
 
 While TDD with Claude can be token-intensive, the quality improvements and time savings typically justify expenses:
 
-### Optimization Strategies
+### Optimisation Strategies
 
 1. **Strategic Model Selection**: Use Claude Sonnet for test writing, Haiku for running tests
 2. **Context Management**: Keep test contexts focused and specific

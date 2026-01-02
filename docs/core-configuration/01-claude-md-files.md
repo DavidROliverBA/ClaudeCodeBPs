@@ -35,7 +35,7 @@ Claude Code implements a sophisticated four-tier memory hierarchy that loads con
 ### The Four Memory Tiers
 
 1. **Enterprise Policy** (Highest Priority)
-   - Organization-wide instructions at the system level
+   - Organisation-wide instructions at the system level
    - Typically managed by enterprise administrators
    - Applies across all projects and users
 
@@ -88,7 +88,7 @@ CLAUDE.md files support importing external files using the `@path/to/file` synta
 - All functions must have JSDoc comments
 ```
 
-The import system supports up to 5 levels of recursive imports, enabling flexible knowledge organization across large projects.
+The import system supports up to 5 levels of recursive imports, enabling flexible knowledge organisation across large projects.
 
 ---
 
@@ -110,7 +110,7 @@ The most effective CLAUDE.md files follow the **WHAT, WHY, HOW** framework:
 - **Styling**: Tailwind CSS + shadcn/ui components
 ```
 
-**Codebase Organization:**
+**Codebase Organisation:**
 ```markdown
 # Project Structure
 
@@ -129,9 +129,9 @@ The most effective CLAUDE.md files follow the **WHAT, WHY, HOW** framework:
 # Project Overview
 
 This is a SaaS platform for managing customer support tickets. The system handles:
-- Multi-tenant organization management
+- Multi-tenant organisation management
 - Real-time ticket updates via WebSockets
-- AI-powered ticket categorization and routing
+- AI-powered ticket categorisation and routing
 - Integration with Slack, Discord, and email
 
 **Key Design Decisions:**
@@ -213,7 +213,7 @@ This is a SaaS platform for managing customer support tickets. The system handle
 
 **Test Naming:**
 - Describe what the code should do, not implementation details
-- Format: `it('should [expected behavior] when [condition]')`
+- Format: `it('should [expected behaviour] when [condition]')`
 - Group related tests with `describe()` blocks
 
 **Example:**
@@ -245,7 +245,7 @@ describe('formatDate()', () => {
 1. Copy `.env.example` to `.env.local`
 2. Fill in required environment variables
 3. Run `pnpm install` to install dependencies
-4. Run `pnpm db:push` to initialize database
+4. Run `pnpm db:push` to initialise database
 5. Run `pnpm dev` to start development server
 ```
 
@@ -261,7 +261,7 @@ Research indicates that frontier LLMs can follow approximately 150-200 instructi
 - Every line consumes tokens from your context window
 - Verbose files introduce noise that reduces instruction-following quality
 - Your actual code needs most of the available context
-- Focused documents outperform lengthy ones in practice
+- Focused documents outperform lengthy ones in practise
 
 **Do:**
 - Use short, declarative bullet points
@@ -344,7 +344,7 @@ This approach:
 - Allows detailed documentation where it's useful
 - Uses imports only when relevant
 
-### 5. Use Modular Organization
+### 5. Use Modular Organisation
 
 Break your CLAUDE.md into clear sections with markdown headers. This prevents "instruction bleeding" where guidelines from one area affect another.
 
@@ -383,9 +383,9 @@ Your CLAUDE.md becomes part of Claude's system prompt, so apply the same rigor y
 - Start simple with basic context
 - Monitor Claude's responses for misunderstandings
 - Add clarifications when Claude makes wrong assumptions
-- Remove instructions that don't improve behavior
+- Remove instructions that don't improve behaviour
 
-**Emphasize critical rules:**
+**Emphasise critical rules:**
 ```markdown
 # Critical Rules
 
@@ -759,7 +759,7 @@ For more real-world examples, explore these curated collections:
 - **[awesome-claude-md](https://github.com/josix/awesome-claude-md)** - Curated CLAUDE.md files from top open-source projects
 - **[claude-md-examples](https://github.com/ArthurClune/claude-md-examples)** - Sample files for different project types
 - **[my-claude-code-setup](https://github.com/centminmod/my-claude-code-setup)** - Starter template configuration
-- **[Claude-Flow Templates](https://github.com/ruvnet/claude-flow/wiki/CLAUDE-MD-Templates)** - Specialized templates for different use cases
+- **[Claude-Flow Templates](https://github.com/ruvnet/claude-flow/wiki/CLAUDE-MD-Templates)** - Specialised templates for different use cases
 
 ---
 
@@ -769,7 +769,7 @@ Understanding how Claude processes CLAUDE.md files helps you write more effectiv
 
 ### Context Loading Process
 
-1. **Session Initialization**: When you start Claude Code, it reads all applicable CLAUDE.md files in hierarchical order
+1. **Session Initialisation**: When you start Claude Code, it reads all applicable CLAUDE.md files in hierarchical order
 2. **System Prompt Integration**: The contents become part of Claude's system prompt for that session
 3. **Persistent Throughout Session**: Once loaded, the context remains available for all subsequent interactions
 4. **No Explicit Reference Needed**: Claude automatically considers CLAUDE.md content when responding
@@ -861,12 +861,12 @@ Press `#` during Claude Code sessions to add learnings in real-time:
 
 This creates a feedback loop where CLAUDE.md grows smarter with each coding session.
 
-### 3. Monitor Claude's Behavior for Gaps
+### 3. Monitor Claude's Behaviour for Gaps
 
 Pay attention to when Claude:
 - Repeatedly asks for the same information → Add it to CLAUDE.md
 - Makes wrong assumptions → Add clarification
-- Ignores a convention → Emphasize with IMPORTANT or YOU MUST
+- Ignores a convention → Emphasise with IMPORTANT or YOU MUST
 - Suggests incorrect approaches → Document the correct pattern
 
 ### 4. Collaborative Refinement
@@ -952,14 +952,14 @@ As CLAUDE.md grows, periodically compress it:
 
 When writing tests, you should always use descriptive test names. The test name should explain what the test does, what conditions it tests, and what the expected outcome is. This makes it easier for other developers to understand what each test is checking without reading the implementation.
 
-For example, a good test name would be "should return 404 when user does not exist" rather than just "test user lookup". The first one clearly states the expected behavior, the condition being tested, and the expected result.
+For example, a good test name would be "should return 404 when user does not exist" rather than just "test user lookup". The first one clearly states the expected behaviour, the condition being tested, and the expected result.
 ```
 
 **After compression (concise):**
 ```markdown
 ## Testing
 
-- Test names: `should [behavior] when [condition]`
+- Test names: `should [behaviour] when [condition]`
 - Example: `should return 404 when user does not exist`
 ```
 
@@ -988,7 +988,7 @@ Don't let CLAUDE.md become a historical archive. Remove information that no long
 
 ### 10. Use Prompt Improvers
 
-Anthropic's team "occasionally runs CLAUDE.md files through the prompt improver" to optimize instruction-following. You can do this too:
+Anthropic's team "occasionally runs CLAUDE.md files through the prompt improver" to optimise instruction-following. You can do this too:
 
 **Prompt to Claude:**
 ```
@@ -996,7 +996,7 @@ Please review this CLAUDE.md file and suggest improvements for clarity, concisen
 
 1. Removing redundancy
 2. Strengthening critical rules
-3. Improving structure and organization
+3. Improving structure and organisation
 4. Ensuring consistent formatting
 
 [Paste your CLAUDE.md content]
@@ -1083,7 +1083,7 @@ Then apply Claude's suggestions and test the results.
 
 **Problem**: Claude may not distinguish between critical and nice-to-have rules.
 
-**Solution**: Emphasize critical rules with IMPORTANT, YOU MUST, NEVER.
+**Solution**: Emphasise critical rules with IMPORTANT, YOU MUST, NEVER.
 
 ```markdown
 ✓ Strong:
@@ -1142,7 +1142,7 @@ In our project, we have decided to use TypeScript because it provides type safet
 
 **Problem**: Can't tell if the file is helping or hurting.
 
-**Solution**: Monitor Claude's behavior, collect team feedback, iterate based on results.
+**Solution**: Monitor Claude's behaviour, collect team feedback, iterate based on results.
 
 ---
 
@@ -1280,7 +1280,7 @@ This guide was compiled from extensive research of official documentation, commu
 
 - [Claude Code: Best practices for agentic coding](https://www.anthropic.com/engineering/claude-code-best-practices)
 - [Manage Claude's memory - Claude Code Docs](https://code.claude.com/docs/en/memory)
-- [Using CLAUDE.MD files: Customizing Claude Code for your codebase](https://claude.com/blog/using-claude-md-files)
+- [Using CLAUDE.MD files: Customising Claude Code for your codebase](https://claude.com/blog/using-claude-md-files)
 - [Writing a good CLAUDE.md | HumanLayer Blog](https://www.humanlayer.dev/blog/writing-a-good-claude-md)
 - [Maximising Claude Code: Building an Effective CLAUDE.md](https://www.maxitect.blog/posts/maximising-claude-code-building-an-effective-claudemd)
 - [What is CLAUDE.md in Claude Code | ClaudeLog](https://claudelog.com/faqs/what-is-claude-md/)

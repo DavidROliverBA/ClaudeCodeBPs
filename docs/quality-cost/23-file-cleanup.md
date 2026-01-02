@@ -18,7 +18,7 @@
 
 Maintaining a clean workspace is essential when working with Claude Code. As an agentic coding tool, Claude Code can create numerous temporary files, cache data, and intermediate artifacts during development sessions. Without proper hygiene practices, these files accumulate and clutter your workspace, consume disk space, and potentially introduce confusion in your development workflow.
 
-This comprehensive guide covers best practices for file cleanup in Claude Code, from manual cleanup prompts to automated solutions using hooks, ensuring your development environment remains organized and efficient.
+This comprehensive guide covers best practices for file cleanup in Claude Code, from manual cleanup prompts to automated solutions using hooks, ensuring your development environment remains organised and efficient.
 
 ---
 
@@ -256,7 +256,7 @@ find . -name ".claude.json.backup" -mtime +7 -delete
 ### Hook Execution Characteristics
 
 - **Timeout**: Default 60 seconds, configurable per command
-- **Parallelization**: All matching hooks run in parallel
+- **Parallelisation**: All matching hooks run in parallel
 - **Deduplication**: Identical commands are automatically deduplicated
 - **Non-blocking**: SessionEnd hooks cannot block session termination
 - **Security**: Hooks execute with your user account permissions—review carefully
@@ -273,7 +273,7 @@ Always review hook configurations in the `/hooks` menu before they take effect.
 
 ### Use /clear Frequently
 
-The `/clear` command is your first line of defense against context bloat:
+The `/clear` command is your first line of defence against context bloat:
 
 > "Pro tip: use /clear often. Every time you start something new, clear the chat. You don't need all that history eating your tokens."
 
@@ -375,7 +375,7 @@ After completing a development task, verify:
 Follow this structured approach for thorough cleanup:
 
 1. **Review**: Run `git status` and `find . -mmin -60 -type f` to see recent files
-2. **Categorize**: Sort files into keep/delete/review
+2. **Categorise**: Sort files into keep/delete/review
 3. **Verify**: Ensure kept files are necessary and properly documented
 4. **Execute**: Delete temporary files in batches
 5. **Confirm**: Re-run `git status` to verify workspace cleanliness
@@ -446,7 +446,7 @@ Configure global gitignore:
 git config --global core.excludesFile ~/.gitignore
 ```
 
-### Best Practice: Global vs. Project Ignores
+### Best Practise: Global vs. Project Ignores
 
 **Use global gitignore for:**
 - Operating system files (`.DS_Store`, `Thumbs.db`)
@@ -705,7 +705,7 @@ Effective file cleanup in Claude Code requires a multi-layered approach:
 5. **Systematic checklists** for post-task verification
 6. **Workspace hygiene habits** integrated into daily workflow
 
-By implementing these practices, you maintain a clean, efficient development environment that prevents file accumulation, reduces confusion, and keeps your projects organized.
+By implementing these practices, you maintain a clean, efficient development environment that prevents file accumulation, reduces confusion, and keeps your projects organised.
 
 Remember: Claude Code is a powerful tool, but like any junior developer, it needs clear guidance about cleanup expectations. Make cleanup an explicit part of your workflow, not an afterthought.
 

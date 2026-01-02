@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Claude Code implements a sophisticated, multi-tier settings system that enables fine-grained control over its behavior across different scopes—from individual developers to entire organizations. Understanding this hierarchy is essential for maximizing productivity, maintaining security, and ensuring consistent team collaboration.
+Claude Code implements a sophisticated, multi-tier settings system that enables fine-grained control over its behaviour across different scopes—from individual developers to entire organisations. Understanding this hierarchy is essential for maximising productivity, maintaining security, and ensuring consistent team collaboration.
 
 This guide provides an in-depth exploration of Claude Code's settings architecture, configuration options, practical examples, and best practices for both individual developers and teams.
 
@@ -29,8 +29,8 @@ Claude Code employs a **five-tier precedence system** for settings configuration
 - **Location**: System-level paths
   - macOS: `/Library/Application Support/ClaudeCode/managed-settings.json`
   - Linux/WSL: `/etc/claude-code/managed-settings.json`
-  - Windows: `C:\Program Files\ClaudeCode\managed-settings.json`
-- **Purpose**: Organization-wide policies enforced by IT/DevOps
+  - Windows: `C:\Programme Files\ClaudeCode\managed-settings.json`
+- **Purpose**: Organisation-wide policies enforced by IT/DevOps
 - **Characteristics**: Cannot be overridden by any lower-level settings
 - **Use Cases**: Security policies, compliance requirements, company coding standards
 
@@ -119,7 +119,7 @@ In addition to `~/.claude/settings.json`, Claude Code also uses `~/.claude.json`
 
 ### Location and Purpose
 
-Project settings reside in `.claude/settings.json` within your project directory. This file is **committed to version control** and shared with your entire team, ensuring consistent behavior across all developers.
+Project settings reside in `.claude/settings.json` within your project directory. This file is **committed to version control** and shared with your entire team, ensuring consistent behaviour across all developers.
 
 ### When to Use Project Settings
 
@@ -261,7 +261,7 @@ Local settings are stored in `.claude/settings.local.json` within your project d
 ### Important Notes on Local Settings
 
 - **Automatic gitignore**: Claude Code automatically configures git to ignore `.claude/settings.local.json` when it's created
-- **Merge behavior**: Settings from this file are merged with project and user settings, with local settings taking precedence
+- **Merge behaviour**: Settings from this file are merged with project and user settings, with local settings taking precedence
 - **Known issues**: There have been reported bugs where programmatic updates to this file may overwrite manual changes instead of merging them
 - **Security**: For maximum security on sensitive projects, use a separate `settings.local.json` without sudo permissions
 
@@ -271,14 +271,14 @@ Local settings are stored in `.claude/settings.local.json` within your project d
 
 ### Location and Purpose
 
-Enterprise/managed settings provide organization-level control over Claude Code configurations. These settings are distributed automatically through the Claude.ai admin console and cannot be overridden by individual users.
+Enterprise/managed settings provide organisation-level control over Claude Code configurations. These settings are distributed automatically through the Claude.ai admin console and cannot be overridden by individual users.
 
 ### When to Use Managed Settings
 
-- **Security policies** that must be enforced across the organization
+- **Security policies** that must be enforced across the organisation
 - **Compliance requirements** (e.g., data handling, audit logging)
 - **Company-wide tool restrictions**
-- **Standardized workflows** across all teams
+- **Standardised workflows** across all teams
 - **Hook restrictions** (`allowManagedHooksOnly: true`)
 - **Plugin marketplace allowlisting** (`strictKnownMarketplaces`)
 
@@ -337,11 +337,11 @@ Enterprise/managed settings provide organization-level control over Claude Code 
 
 ## How Settings Merge and Override
 
-### Merging Behavior
+### Merging Behaviour
 
 Claude Code settings **merge hierarchically** rather than replace entirely. This means:
 
-1. **Lower-priority settings provide defaults**: User settings establish baseline behavior
+1. **Lower-priority settings provide defaults**: User settings establish baseline behaviour
 2. **Higher-priority settings augment or override**: Project settings can add to or override user settings
 3. **Unspecified settings inherit**: If a setting isn't defined at a higher level, the lower level's value is preserved
 
@@ -550,7 +550,7 @@ Advanced sandboxing isolates bash operations (macOS/Linux):
 
 ### Attribution
 
-Customize git commit and PR attribution:
+Customise git commit and PR attribution:
 
 ```json
 {
@@ -1099,7 +1099,7 @@ For enterprise deployments:
 - **disler/claude-code-hooks-mastery**: [https://github.com/disler/claude-code-hooks-mastery](https://github.com/disler/claude-code-hooks-mastery)
 - **zebbern/claude-code-guide**: [https://github.com/zebbern/claude-code-guide](https://github.com/zebbern/claude-code-guide)
 
-### Specialized Topics
+### Specialised Topics
 
 - **Claude Code Hook Examples**: [https://stevekinney.com/courses/ai-development/claude-code-hook-examples](https://stevekinney.com/courses/ai-development/claude-code-hook-examples)
 - **Understanding Claude Code Permissions and Security**: [https://www.petefreitag.com/blog/claude-code-permissions/](https://www.petefreitag.com/blog/claude-code-permissions/)
@@ -1115,11 +1115,11 @@ Claude Code's settings hierarchy provides a powerful and flexible system for con
 - **Ensure consistency** with team-shared project settings
 - **Preserve flexibility** via personal user and local settings
 - **Automate quality** through hooks and permissions
-- **Scale effectively** from individual developers to large organizations
+- **Scale effectively** from individual developers to large organisations
 
 The key to success is finding the right balance between security, productivity, and flexibility—using restrictive defaults with explicit allowances, leveraging hooks for automation, and respecting the hierarchy when configuring settings at different levels.
 
-Whether you're an individual developer customizing your workflow, a team lead establishing project standards, or an enterprise administrator enforcing organizational policies, Claude Code's settings system provides the tools you need to work efficiently and securely.
+Whether you're an individual developer customising your workflow, a team lead establishing project standards, or an enterprise administrator enforcing organisational policies, Claude Code's settings system provides the tools you need to work efficiently and securely.
 
 ---
 

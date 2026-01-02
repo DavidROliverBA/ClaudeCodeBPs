@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Choosing the right Claude model for your coding tasks is crucial for balancing performance, cost, and development velocity. Claude Code supports multiple models from the Claude 4 family, each optimized for different use cases. This guide provides strategic insights for selecting and switching between Opus, Sonnet, and Haiku models to maximize efficiency and minimize costs.
+Choosing the right Claude model for your coding tasks is crucial for balancing performance, cost, and development velocity. Claude Code supports multiple models from the Claude 4 family, each optimised for different use cases. This guide provides strategic insights for selecting and switching between Opus, Sonnet, and Haiku models to maximise efficiency and minimise costs.
 
 **Key Recommendation:** If you're unsure which model to use, Anthropic recommends starting with Claude Sonnet 4.5, as it offers the best balance of intelligence, speed, and cost for most use cases, with exceptional performance in coding and agentic tasks.
 
@@ -35,7 +35,7 @@ The most sophisticated strategy is using the `opusplan` alias, which automatical
 - **Plan Mode**: Uses Opus 4.5 for complex reasoning and architectural decisions
 - **Execution Mode**: Automatically switches to Sonnet 4.5 for code generation and implementation
 
-This approach provides "the best of both worlds: Opus's superior reasoning for planning, and Sonnet's efficiency for execution," optimizing both quality and cost.
+This approach provides "the best of both worlds: Opus's superior reasoning for planning, and Sonnet's efficiency for execution," optimising both quality and cost.
 
 ### Task-Based Switching Strategy
 
@@ -43,13 +43,13 @@ The recommended workflow for mixing models is:
 
 1. **Haiku** - Initial setup, file reads, basic content extraction
 2. **Sonnet** - Building features, writing logic, managing state, connecting APIs
-3. **Opus** - Code reviews, optimization analysis, architectural decisions
+3. **Opus** - Code reviews, optimisation analysis, architectural decisions
 
 This combination makes workflows "faster and safer" while controlling costs effectively.
 
 ### Mid-Session Switching Considerations
 
-When switching models during a conversation, be aware that token consumption increases because the new model must process the entire conversation history. For long conversations, consider starting a fresh session when changing models to minimize token usage.
+When switching models during a conversation, be aware that token consumption increases because the new model must process the entire conversation history. For long conversations, consider starting a fresh session when changing models to minimise token usage.
 
 ## When to Use Each Model
 
@@ -59,7 +59,7 @@ When switching models during a conversation, be aware that token consumption inc
 - Complex architectural decisions requiring deep reasoning
 - Comprehensive code reviews catching subtle issues
 - Refactoring large codebases with complex dependencies
-- Optimization analysis requiring trade-off evaluation
+- Optimisation analysis requiring trade-off evaluation
 - Problems requiring genuine development partnership
 
 **Characteristics:**
@@ -69,7 +69,7 @@ When switching models during a conversation, be aware that token consumption inc
 - Catches issues other models miss
 - Slower but more thorough
 
-**Real-World Use Case:** "If you want a full review, optimization tips, or a deep analysis of your code structure, Opus is your model."
+**Real-World Use Case:** "If you want a full review, optimisation tips, or a deep analysis of your code structure, Opus is your model."
 
 ### Sonnet 4.5: The All-Rounder
 
@@ -111,7 +111,7 @@ When switching models during a conversation, be aware that token consumption inc
 
 ### Pricing Comparison
 
-Understanding the cost differences is essential for budget optimization:
+Understanding the cost differences is essential for budget optimisation:
 
 | Model | Input Cost | Output Cost | Cost Ratio |
 |-------|-----------|-------------|------------|
@@ -121,10 +121,10 @@ Understanding the cost differences is essential for budget optimization:
 
 **Key Insight:** Opus is approximately 5 times more expensive than Sonnet and about 20 times more expensive than Haiku for equivalent workloads.
 
-### Cost Optimization Techniques
+### Cost Optimisation Techniques
 
 **1. Prompt Caching**
-Claude Code automatically uses prompt caching to optimize performance and reduce costs. Testing shows 70-80% cost savings are possible through caching, with batch processing and caching potentially reducing costs by up to 90% in some cases.
+Claude Code automatically uses prompt caching to optimise performance and reduce costs. Testing shows 70-80% cost savings are possible through caching, with batch processing and caching potentially reducing costs by up to 90% in some cases.
 
 **2. Context Management**
 - Use `/clear` frequently between tasks to reset the context window
@@ -228,7 +228,7 @@ Matching the right model to task complexity is essential for cost-effective deve
 ### High Complexity → Opus
 - Architectural design decisions
 - Complex refactoring with trade-offs
-- Performance optimization requiring deep analysis
+- Performance optimisation requiring deep analysis
 - Security reviews
 - Problems requiring creative problem-solving
 
@@ -239,7 +239,7 @@ For particularly complex problems, combine model selection with extended thinkin
 - `think hard` - Deeper analysis
 - `ultrathink` - Maximum reasoning depth
 
-**Best Practice:** "Claude performs best when it has a clear target to iterate against." Use test-driven development or visual mockups as clear targets for complex tasks.
+**Best Practise:** "Claude performs best when it has a clear target to iterate against." Use test-driven development or visual mockups as clear targets for complex tasks.
 
 ## Benchmarks and Performance
 
@@ -295,7 +295,7 @@ This workflow reduces wasted tokens by having Claude research and plan first rat
 1. **Explore**: Understand the codebase (Sonnet or Haiku)
 2. **Plan**: Design the solution (Opus or Sonnet)
 3. **Code**: Implement features (Sonnet)
-4. **Commit**: Review and finalize (Opus for critical code, Sonnet otherwise)
+4. **Commit**: Review and finalise (Opus for critical code, Sonnet otherwise)
 
 ### 3. Use Clear, Specific Instructions
 
@@ -313,9 +313,9 @@ Create custom slash commands for repetitive tasks to avoid redundant explanation
 
 ### 5. Monitor Usage Patterns
 
-Track which tasks consume the most tokens and optimize your model selection strategy accordingly. Some users report 70-80% cost reductions through strategic model switching.
+Track which tasks consume the most tokens and optimise your model selection strategy accordingly. Some users report 70-80% cost reductions through strategic model switching.
 
-### 6. Consider Account-Specific Behaviors
+### 6. Consider Account-Specific Behaviours
 
 For certain Max plan users, Claude Code automatically falls back to Sonnet if you hit usage thresholds with Opus, helping manage costs automatically.
 
@@ -325,7 +325,7 @@ For straightforward work like fixing lint errors, use `--dangerously-skip-permis
 
 ### 8. Batch Similar Tasks
 
-When possible, batch similar operations together before switching models to minimize the token overhead of model switching.
+When possible, batch similar operations together before switching models to minimise the token overhead of model switching.
 
 ## Model Knowledge Cutoffs
 
@@ -346,7 +346,7 @@ For questions about recent events or technologies, consider model knowledge limi
 1. /model sonnet (or keep default)
 2. Implement the feature
 3. /model opus
-4. Review and optimize
+4. Review and optimise
 ```
 
 ### Scenario 2: Bug Investigation
@@ -388,7 +388,7 @@ For questions about recent events or technologies, consider model knowledge limi
 
 ## Future Considerations
 
-As of 2026, model selection is becoming increasingly important as organizations adopt AI agents, copilots, and automated workflows. The choice between models is "less about raw intelligence and more about reliability, reasoning style, safety constraints, and how well each model fits into real production systems."
+As of 2026, model selection is becoming increasingly important as organisations adopt AI agents, copilots, and automated workflows. The choice between models is "less about raw intelligence and more about reliability, reasoning style, safety constraints, and how well each model fits into real production systems."
 
 Key trends to watch:
 - Continued improvement in cost-performance ratios
@@ -408,14 +408,14 @@ Effective model selection in Claude Code requires understanding the strengths an
 5. Manage context and use caching to reduce costs
 6. Match model capability to actual task requirements
 
-By following these guidelines, you can maximize development velocity while minimizing costs, creating a sustainable and effective coding workflow with Claude Code.
+By following these guidelines, you can maximise development velocity while minimising costs, creating a sustainable and effective coding workflow with Claude Code.
 
 ---
 
 ## Sources and Further Reading
 
 - [Model configuration - Claude Code Docs](https://code.claude.com/docs/en/model-config)
-- [Claude Code Model Configuration | Claude Help Center](https://support.claude.com/en/articles/11940350-claude-code-model-configuration)
+- [Claude Code Model Configuration | Claude Help Centre](https://support.claude.com/en/articles/11940350-claude-code-model-configuration)
 - [Models overview - Claude Docs](https://platform.claude.com/docs/en/about-claude/models/overview)
 - [Claude Code: Best practices for agentic coding](https://www.anthropic.com/engineering/claude-code-best-practices)
 - [Anthropic Claude Models Complete Guide | CodeGPT](https://www.codegpt.co/blog/anthropic-claude-models-complete-guide)

@@ -20,7 +20,7 @@ A comprehensive guide to getting the best results from Claude Code through strat
 
 ## Introduction
 
-Claude Code is an agentic coding assistant that operates fundamentally differently from conversational AI tools. It automatically pulls context into prompts, explores your codebase, and executes multi-step workflows. Understanding how to craft effective prompts is essential for maximizing its potential.
+Claude Code is an agentic coding assistant that operates fundamentally differently from conversational AI tools. It automatically pulls context into prompts, explores your codebase, and executes multi-step workflows. Understanding how to craft effective prompts is essential for maximising its potential.
 
 **Key Principle**: The best prompt isn't the longest or most complex—it's the one that achieves your goals reliably with the minimum necessary structure.
 
@@ -161,7 +161,7 @@ future-proofing features unless I specifically ask for them.
 
 **Problem**: When extended thinking is disabled, Claude Opus 4.5 is particularly sensitive to the word "think" and its variants.
 
-**Solution**: Replace "think" with alternatives like "consider," "believe," "evaluate," or "analyze":
+**Solution**: Replace "think" with alternatives like "consider," "believe," "evaluate," or "analyse":
 
 **Avoid**:
 ```
@@ -172,7 +172,7 @@ Think about the best approach for this...
 ```
 Consider the best approach for this...
 Evaluate different strategies for...
-Analyze the trade-offs between...
+Analyse the trade-offs between...
 ```
 
 ### 3. Assuming Claude Knows Your Preferences
@@ -336,7 +336,7 @@ For complex tasks, break them into discrete prompts rather than one massive requ
 **Prompt 1 (Exploration)**:
 ```
 Read the existing REST API endpoints in src/api/routes.py and the data
-models in src/models/. Don't write any code yet. Summarize the current
+models in src/models/. Don't write any code yet. Summarise the current
 API structure and identify which endpoints would map to GraphQL queries
 vs mutations.
 ```
@@ -447,7 +447,7 @@ Only modify files in the src/api/ directory. Don't touch:
 #### Performance Constraints
 ```
 The data processing function must handle 10,000 records per second.
-If your implementation would be slower, optimize for performance over
+If your implementation would be slower, optimise for performance over
 readability. Consider using batch processing, caching, or parallel execution.
 ```
 
@@ -516,7 +516,7 @@ Example:
 ```
 ultrathink: This is a complex race condition in our distributed system.
 The order processing service occasionally processes the same order twice
-when multiple replicas handle the request simultaneously. Analyze the
+when multiple replicas handle the request simultaneously. Analyse the
 code in src/orders/processor.py and propose a solution that ensures
 exactly-once processing without significantly impacting performance.
 ```
@@ -619,7 +619,7 @@ Claude excels with images and diagrams. Include screenshots, design mocks, or ar
 
 ```
 I've attached a screenshot of the desired UI layout (design_mockup.png).
-Please implement this dashboard using React components. Match the colors,
+Please implement this dashboard using React components. Match the colours,
 spacing, and layout exactly as shown in the mockup.
 ```
 
@@ -694,9 +694,9 @@ Before sending a prompt to Claude Code, verify:
 - [Official Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)
 - [Claude 4.x Prompting Best Practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-4-best-practices)
 - [Anthropic Interactive Prompt Engineering Tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial)
-- [CLAUDE.md Optimization Research](https://arize.com/blog/claude-md-best-practices-learned-from-optimizing-claude-code-with-prompt-learning/)
+- [CLAUDE.md Optimisation Research](https://arize.com/blog/claude-md-best-practices-learned-from-optimising-claude-code-with-prompt-learning/)
 
 ---
 
 *Last updated: January 2026*
-*Based on research from Anthropic documentation, community best practices, and Claude 4.x optimization studies*
+*Based on research from Anthropic documentation, community best practices, and Claude 4.x optimisation studies*

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Claude Code is a powerful agentic coding assistant, but like many advanced AI models, it has a natural tendency toward over-engineering. Claude Opus 4.5, in particular, tends to create extra files, add unnecessary abstractions, or build in flexibility that wasn't explicitly requested. This comprehensive guide will help you recognize over-engineering patterns, prevent them through effective prompting, and recover when Claude goes overboard.
+Claude Code is a powerful agentic coding assistant, but like many advanced AI models, it has a natural tendency toward over-engineering. Claude Opus 4.5, in particular, tends to create extra files, add unnecessary abstractions, or build in flexibility that wasn't explicitly requested. This comprehensive guide will help you recognise over-engineering patterns, prevent them through effective prompting, and recover when Claude goes overboard.
 
 ## Common Over-Engineering Patterns Claude Might Produce
 
@@ -18,7 +18,7 @@ Claude often creates helper functions, utility classes, or abstractions for oper
 The model tends to add error handling, fallbacks, and validation for scenarios that can't actually happen in your system. This clutters code with unnecessary defensive programming.
 
 ### 4. Over-Configurability
-Simple features often get unnecessary configuration options, environment variables, or customization parameters that weren't requested and won't be used.
+Simple features often get unnecessary configuration options, environment variables, or customisation parameters that weren't requested and won't be used.
 
 ### 5. Compatibility Layers
 Claude may add backwards-compatibility shims, adapter patterns, or intermediate layers when you could simply change the existing code directly.
@@ -78,7 +78,7 @@ Tailor your constraints to your project phase and context:
 
 **For Solo Developers/Early-Stage Startups:**
 ```
-Prioritize simple, readable code with minimal abstraction. Avoid premature optimization.
+Prioritise simple, readable code with minimal abstraction. Avoid premature optimisation.
 Strive for elegant, minimal solutions that reduce complexity. I'm working alone, so
 every abstraction is complexity I maintain alone.
 ```
@@ -140,7 +140,7 @@ This grounds Claude in concrete examples rather than abstract possibilities.
 Writing tests first naturally constrains scope:
 
 ```
-First, write tests that verify these specific behaviors: [list].
+First, write tests that verify these specific behaviours: [list].
 Then implement only the code necessary to pass these tests.
 Do not add functionality beyond what the tests require.
 ```
@@ -157,7 +157,7 @@ IMPORTANT: Make only the changes I explicitly requested. Do not:
 - Refactor code outside the scope of this request
 - Add error handling beyond what I specified
 - Create new abstractions or utilities
-- Improve or optimize unrelated code
+- Improve or optimise unrelated code
 
 If you think something additional is needed, ask me first rather than implementing it.
 ```
@@ -205,10 +205,10 @@ unless the same code appears in at least 3 places. DRY is less important than cl
 and simplicity at this stage.
 ```
 
-### Recognize True Abstraction Needs
+### Recognise True Abstraction Needs
 
 Abstractions serve two legitimate purposes:
-1. **Keeping patterns synchronized**: When the same logic must stay in sync across multiple locations
+1. **Keeping patterns synchronised**: When the same logic must stay in sync across multiple locations
 2. **Encapsulating complexity**: When hiding implementation details genuinely improves code clarity
 
 If an abstraction doesn't serve one of these purposes, you don't need it yet.
@@ -248,7 +248,7 @@ During refactoring:
 
 ## Signs That Claude Is Over-Engineering
 
-Recognizing over-engineering in progress helps you course-correct quickly. Watch for these warning signs:
+Recognising over-engineering in progress helps you course-correct quickly. Watch for these warning signs:
 
 ### File and Code Volume Red Flags
 
@@ -266,10 +266,10 @@ Recognizing over-engineering in progress helps you course-correct quickly. Watch
 ### Architecture Red Flags
 
 - **Premature generalization**: Code that handles cases you don't have yet
-- **Excessive configuration**: Configuration files, environment variables, or feature flags for simple behaviors
+- **Excessive configuration**: Configuration files, environment variables, or feature flags for simple behaviours
 - **Dependency injection for everything**: DI containers and interfaces where direct instantiation would suffice
 
-### Behavioral Indicators
+### Behavioural Indicators
 
 - **Claude explains complex architecture**: If Claude starts explaining how its multi-layered design works, it's probably over-engineered
 - **"This will make it easier to..."**: Watch for justifications about hypothetical future needs
@@ -282,7 +282,7 @@ Per the 6 warning signs of over-engineering:
 1. **Hard-to-maintain code**: New team members struggle to understand it, or you spend more time debugging than adding features
 2. **Unnecessarily complex architecture**: Abstraction upon abstraction without clear benefit
 3. **Over-reliance on patterns**: Design patterns used where simpler code would work
-4. **Premature optimization**: Performance optimizations for code that isn't slow
+4. **Premature optimisation**: Performance optimisations for code that isn't slow
 5. **Feature bloat**: More features than needed to solve the actual problem
 6. **Gold plating**: Code that's "clever" rather than clear
 
@@ -416,18 +416,18 @@ The `CLAUDE.md` file is automatically pulled into context at the start of every 
 - [Document actual project-specific constraints that prevent over-engineering]
 ```
 
-### Optimize CLAUDE.md Based on Your Codebase
+### Optimise CLAUDE.md Based on Your Codebase
 
-Research shows that repository-specific prompt optimization yields significant improvements (+10.87% on SWE Bench Lite). Tailor your CLAUDE.md to your actual codebase:
+Research shows that repository-specific prompt optimisation yields significant improvements (+10.87% on SWE Bench Lite). Tailor your CLAUDE.md to your actual codebase:
 
 - Document **real project quirks** rather than generic best practices
 - Include **patterns specific to your code** that Claude should follow
 - Use **LLM feedback on failures** to refine instructions over time
 - Focus on **concrete examples** from your codebase
 
-## Working Effectively Within Claude 4.x Behavior
+## Working Effectively Within Claude 4.x Behaviour
 
-Claude Opus 4.5 and Sonnet 4.5 have different behavior than earlier models. Understanding these changes helps you prompt effectively:
+Claude Opus 4.5 and Sonnet 4.5 have different behaviour than earlier models. Understanding these changes helps you prompt effectively:
 
 ### More Conservative by Default
 
@@ -535,7 +535,7 @@ Add a calendar widget to show events
 **Over-Engineered Response:**
 - Creates `CalendarWidget.tsx`, `CalendarTypes.ts`, `CalendarUtils.ts`, `CalendarHooks.ts`, `CalendarContext.tsx`
 - Adds timezone handling, recurring events, multiple view modes, export functionality
-- Creates configuration system for customizing appearance
+- Creates configuration system for customising appearance
 - Implements caching layer for event data
 
 **Properly Scoped Request:**
@@ -585,7 +585,7 @@ Over-engineering is Claude's natural tendency, but it's completely controllable 
 2. **Specify scope clearly**: Vague requests get bloated responses
 3. **Plan before implementing**: Catch over-engineering in the planning phase
 4. **Use recovery tools**: Rewind and reset when things go off track
-5. **Optimize over time**: Use CLAUDE.md to encode lessons learned
+5. **Optimise over time**: Use CLAUDE.md to encode lessons learned
 
 Remember: The right amount of complexity is the minimum needed for the current task. Less code means fewer bugs, and existing code is tested code. Keep it minimal, keep it maintainable.
 
@@ -596,7 +596,7 @@ Remember: The right amount of complexity is the minimum needed for the current t
 - [Claude Code: Best practices for agentic coding - Anthropic](https://www.anthropic.com/engineering/claude-code-best-practices)
 - [Prompting best practices - Claude Docs](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-4-best-practices)
 - [How to Stop Claude Code From Overengineering Everything - Nathan Onn](https://www.nathanonn.com/how-to-stop-claude-code-from-overengineering-everything/)
-- [CLAUDE.md: Best Practices Learned from Optimizing Claude Code - Arize](https://arize.com/blog/claude-md-best-practices-learned-from-optimizing-claude-code-with-prompt-learning/)
+- [CLAUDE.md: Best Practices Learned from Optimising Claude Code - Arize](https://arize.com/blog/claude-md-best-practices-learned-from-optimising-claude-code-with-prompt-learning/)
 - [Checkpointing - Claude Code Docs](https://code.claude.com/docs/en/checkpointing)
 - [The 6 warning signs of overengineering - LeadDev](https://leaddev.com/software-quality/the-6-warning-signs-of-overengineering)
 - [Common pitfalls when building generative AI applications - Chip Huyen](https://huyenchip.com/2025/01/16/ai-engineering-pitfalls.html)

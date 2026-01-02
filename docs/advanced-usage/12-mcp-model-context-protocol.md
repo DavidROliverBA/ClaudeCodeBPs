@@ -14,14 +14,14 @@
 
 ## What is MCP and Why It Matters
 
-The **Model Context Protocol (MCP)** is an open-source standard introduced by Anthropic in November 2024 that enables AI applications to connect to external systems in a standardized way. Often described as "the USB-C port for AI applications," MCP allows AI models like Claude to seamlessly interact with data sources, tools, and workflows.
+The **Model Context Protocol (MCP)** is an open-source standard introduced by Anthropic in November 2024 that enables AI applications to connect to external systems in a standardised way. Often described as "the USB-C port for AI applications," MCP allows AI models like Claude to seamlessly interact with data sources, tools, and workflows.
 
 ### Architecture Overview
 
 MCP uses a **client-server architecture** where AI applications (like Claude Code) act as MCP clients that connect to MCP servers. These servers provide access to:
 - **Data sources**: Local files, databases, cloud storage
 - **Tools**: Search engines, calculators, APIs, system commands
-- **Workflows**: Specialized prompts and task automation
+- **Workflows**: Specialised prompts and task automation
 
 ### Core Primitives
 
@@ -64,7 +64,7 @@ Best for remote, cloud-based MCP servers. This is the most widely supported tran
       "type": "http",
       "url": "https://api.example.com/mcp",
       "headers": {
-        "Authorization": "Bearer ${API_TOKEN}"
+        "Authorisation": "Bearer ${API_TOKEN}"
       }
     }
   }
@@ -121,12 +121,12 @@ Server-Sent Events transport is deprecated; use HTTP instead for new implementat
 
 ### Configuration File Locations
 
-Claude Code recognizes MCP servers from different configuration scopes:
+Claude Code recognises MCP servers from different configuration scopes:
 
 1. **Project Scope**: `.mcp.json` in project root (shared with team, version controlled)
 2. **User Scope**: `~/.claude.json` in home directory (personal configurations)
 3. **Local Scope**: Local overrides that take precedence
-4. **Enterprise Scope**: `managed-mcp.json` for centralized organizational control
+4. **Enterprise Scope**: `managed-mcp.json` for centralised organisational control
 
 ### Configuration File Structure
 
@@ -264,7 +264,7 @@ Maintained by the MCP steering group:
 - **BigQuery**: Google Cloud data warehouse integration
 
 **NoSQL & Vector Databases:**
-- **MongoDB**: Query and analyze MongoDB collections
+- **MongoDB**: Query and analyse MongoDB collections
 - **MongoDB Lens**: Advanced MongoDB analytics
 - **Pinecone**: Vector database for semantic search
 - **ClickHouse**: Analytics and data retrieval
@@ -351,14 +351,14 @@ Building custom MCP servers allows you to expose your own services, APIs, and da
 
 ### Creating a TypeScript MCP Server
 
-#### 1. Initialize Your Project
+#### 1. Initialise Your Project
 
 ```bash
 # Create project directory
 mkdir my-mcp-server
 cd my-mcp-server
 
-# Initialize npm project
+# Initialise npm project
 npm init -y
 
 # Install MCP SDK
@@ -479,7 +479,7 @@ Add to `.mcp.json`:
 
 ### Creating a Python MCP Server
 
-#### 1. Initialize Project with uv
+#### 1. Initialise Project with uv
 
 ```bash
 # Create project using uv
@@ -631,11 +631,11 @@ MCP servers can access sensitive data and perform privileged operations. Securit
 
 Recent security analyses have identified:
 - **Multiple CVEs** (CVSS 7.3-9.6) affecting 437,000+ installations
-- **43% of analyzed servers** vulnerable to command injection
+- **43% of analysed servers** vulnerable to command injection
 - **Confused deputy vulnerabilities** in proxy servers
 - **Prompt injection risks** through external data sources
 
-### Authentication & Authorization
+### Authentication & Authorisation
 
 #### OAuth 2.1 with PKCE (Required for Remote Servers)
 
@@ -649,7 +649,7 @@ Remote MCP servers must implement OAuth 2.1 with PKCE:
       "url": "https://api.example.com/mcp",
       "auth": {
         "type": "oauth2",
-        "authorizationUrl": "https://auth.example.com/authorize",
+        "authorizationUrl": "https://auth.example.com/authorise",
         "tokenUrl": "https://auth.example.com/token",
         "scope": "read write"
       }
@@ -665,13 +665,13 @@ Use `/mcp` command in Claude Code to authenticate.
 Implement least-privilege access:
 
 ```typescript
-// Tool-level authorization
+// Tool-level authorisation
 server.setRequestHandler(CallToolRequestSchema, async (request, context) => {
   const tool = request.params.name;
   const user = context.user;
 
   if (!hasPermission(user, tool)) {
-    throw new Error(`User ${user} not authorized for tool ${tool}`);
+    throw new Error(`User ${user} not authorised for tool ${tool}`);
   }
 
   // Execute tool
@@ -869,7 +869,7 @@ Limit filesystem access:
 
 #### Managed MCP Configuration
 
-Deploy organization-wide configurations:
+Deploy organisation-wide configurations:
 
 ```json
 // /etc/claude/managed-mcp.json
@@ -971,7 +971,7 @@ claude mcp list
 **HTTP Servers**:
 ```bash
 # Check if OAuth token is valid
-curl -H "Authorization: Bearer $TOKEN" https://api.example.com/mcp
+curl -H "Authorisation: Bearer $TOKEN" https://api.example.com/mcp
 ```
 
 **Environment variables**:
@@ -1046,7 +1046,7 @@ mcp-inspector
 
 The inspector provides:
 - Interactive tool testing
-- Request/response visualization
+- Request/response visualisation
 - Schema validation
 - Performance monitoring
 
@@ -1184,7 +1184,7 @@ SERVICE_API_KEY=sk_live_abc123xyz789
 - **User scope** (`~/.claude.json`): Personal tools (private APIs, experimental servers)
 - **Local scope**: Temporary overrides and testing
 
-#### 3. Minimize Active Servers
+#### 3. Minimise Active Servers
 
 Enable only needed servers to reduce context window usage:
 
@@ -1245,7 +1245,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 }
 ```
 
-### Performance Optimization
+### Performance Optimisation
 
 #### 1. Cache Expensive Operations
 
@@ -1402,7 +1402,7 @@ Adopt naming conventions:
 ### Security Best Practices Summary
 
 1. **Principle of Least Privilege**: Grant minimum necessary permissions
-2. **Defense in Depth**: Multiple security layers
+2. **Defence in Depth**: Multiple security layers
 3. **Zero Trust**: Verify every request
 4. **Audit Everything**: Comprehensive logging
 5. **Regular Updates**: Keep dependencies current
@@ -1414,7 +1414,7 @@ Adopt naming conventions:
 
 **Use MCP when:**
 - Building reusable integrations across multiple AI applications
-- Need standardized protocol for tool access
+- Need standardised protocol for tool access
 - Want community-supported servers
 - Require enterprise governance controls
 
@@ -1433,7 +1433,7 @@ The Model Context Protocol represents a paradigm shift in how AI applications in
 - **Seamless integration** with databases, APIs, and tools
 - **Reusable components** across different AI applications
 - **Community-driven ecosystem** with hundreds of pre-built servers
-- **Enterprise-grade security** with standardized controls
+- **Enterprise-grade security** with standardised controls
 - **Future-proof architecture** backed by industry leaders
 
 Whether you're connecting Claude Code to your company's internal systems, building custom integrations, or leveraging community servers, MCP provides the foundation for powerful AI-driven workflows.
@@ -1446,7 +1446,7 @@ Whether you're connecting Claude Code to your company's internal systems, buildi
 - [ ] Set up environment variables for secrets
 - [ ] Test connections with `claude mcp list` and `/mcp`
 - [ ] Explore community servers for your use cases
-- [ ] Review security best practices for your organization
+- [ ] Review security best practices for your organisation
 - [ ] Build custom servers for proprietary systems
 - [ ] Implement monitoring and logging
 - [ ] Document configurations for your team
@@ -1456,7 +1456,7 @@ Whether you're connecting Claude Code to your company's internal systems, buildi
 **Official Documentation:**
 - [Model Context Protocol Specification](https://modelcontextprotocol.io/)
 - [Claude Code MCP Docs](https://code.claude.com/docs/en/mcp)
-- [MCP GitHub Organization](https://github.com/modelcontextprotocol)
+- [MCP GitHub Organisation](https://github.com/modelcontextprotocol)
 
 **SDKs:**
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)

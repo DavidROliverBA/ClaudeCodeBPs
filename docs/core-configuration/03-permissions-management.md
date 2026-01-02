@@ -14,7 +14,7 @@
 
 ## Introduction
 
-Permissions management is the cornerstone of secure AI-assisted development with Claude Code. The permission system acts as a safety harness that governs what the coding agent can do in your environment—from reading and editing files to running terminal commands and calling external tools. This comprehensive guide explores how to configure, manage, and optimize Claude Code's permission system to balance productivity with security.
+Permissions management is the cornerstone of secure AI-assisted development with Claude Code. The permission system acts as a safety harness that governs what the coding agent can do in your environment—from reading and editing files to running terminal commands and calling external tools. This comprehensive guide explores how to configure, manage, and optimise Claude Code's permission system to balance productivity with security.
 
 ## Permission Configuration Fundamentals
 
@@ -27,7 +27,7 @@ Claude Code implements a **scope-based permission hierarchy** with four distinct
 3. **Local** - Personal settings in `.claude/settings.local.json`
 4. **User** (lowest priority) - Global settings in `~/.claude/settings.json`
 
-This hierarchical structure allows organizations to enforce security policies while still permitting individual developers to customize their workflows. If a permission is allowed in user settings but denied in project settings, the project setting takes precedence and the permission is blocked.
+This hierarchical structure allows organisations to enforce security policies while still permitting individual developers to customise their workflows. If a permission is allowed in user settings but denied in project settings, the project setting takes precedence and the permission is blocked.
 
 ### Configuration Methods
 
@@ -86,7 +86,7 @@ Claude Code provides 16 tools with varying permission requirements:
 - `Edit` - Modify existing files
 - `Write` - Create or overwrite files
 - `NotebookEdit` - Edit Jupyter notebooks
-- `Skill` - Execute specialized skills
+- `Skill` - Execute specialised skills
 - `SlashCommand` - Run custom slash commands
 - `WebFetch` - Fetch web content
 - `WebSearch` - Search the web
@@ -245,7 +245,7 @@ There's a reported issue where `/**` glob patterns in `.claude/settings.local.js
 Claude Code offers four permission modes that represent different trust levels:
 
 #### 1. Default Mode (Recommended)
-- **Behavior**: Allows reads without prompting; asks before edits, writes, and command execution
+- **Behaviour**: Allows reads without prompting; asks before edits, writes, and command execution
 - **Use case**: Standard development workflow with balanced security
 - **Configuration**: Active by default, no configuration needed
 
@@ -254,7 +254,7 @@ claude  # Starts in default mode
 ```
 
 #### 2. Plan Mode
-- **Behavior**: Claude can analyze and read but not modify files or execute commands
+- **Behaviour**: Claude can analyse and read but not modify files or execute commands
 - **Use case**: Exploratory analysis, code review, architecture planning
 - **Configuration**: Start with `--mode plan` or use `/plan` command
 
@@ -263,7 +263,7 @@ claude --mode plan
 ```
 
 #### 3. Accept Edits Mode
-- **Behavior**: Automatically accepts file edit permissions for the session
+- **Behaviour**: Automatically accepts file edit permissions for the session
 - **Use case**: Rapid iteration on trusted codebases where you review changes via git diff
 - **Configuration**: Use `--acceptEdits` flag
 
@@ -272,7 +272,7 @@ claude --acceptEdits
 ```
 
 #### 4. Bypass Permissions Mode (Dangerous)
-- **Behavior**: Skips all permission prompts—no safety checks
+- **Behaviour**: Skips all permission prompts—no safety checks
 - **Use case**: Only in fully isolated environments (containers without internet)
 - **Configuration**: Requires `--dangerously-skip-permissions` flag
 
@@ -310,7 +310,7 @@ Claude Code faces a fundamental tension: requiring permission for every action e
 
 ### How Sandboxing Works
 
-The sandboxing runtime uses OS-level primitives (Linux bubblewrap and macOS seatbelt) to enforce restrictions that cover not just Claude Code's direct interactions, but also any scripts, programs, or subprocesses spawned by commands.
+The sandboxing runtime uses OS-level primitives (Linux bubblewrap and macOS seatbelt) to enforce restrictions that cover not just Claude Code's direct interactions, but also any scripts, programmes, or subprocesses spawned by commands.
 
 ### Two Security Boundaries
 
@@ -344,7 +344,7 @@ claude
 
 ### Why Both Boundaries Matter
 
-The article on sandboxing emphasizes that you need both mechanisms simultaneously:
+The article on sandboxing emphasises that you need both mechanisms simultaneously:
 
 - **Without network isolation**: A compromised agent could steal SSH keys and send them to external servers
 - **Without filesystem isolation**: An agent could escape the sandbox by modifying system files or executables
@@ -359,7 +359,7 @@ Think of permissions in Claude Code as your App Store approval system:
 2. **Asklist (permissions.ask)**: Keep risky but necessary operations on ask for conscious approval
 3. **Denylist (permissions.deny)**: Your "nuclear shield" for blocking dangerous operations
 
-**Recommended Approach**: Use the allowlist as the first line of defense, and use denylists only on top of those. This creates a zero-trust environment where only explicitly approved operations proceed automatically.
+**Recommended Approach**: Use the allowlist as the first line of defence, and use denylists only on top of those. This creates a zero-trust environment where only explicitly approved operations proceed automatically.
 
 ### Progressive Trust Model
 
@@ -493,13 +493,13 @@ Individual developers can create `.claude/settings.local.json` for personal pref
 
 ### Enterprise Settings
 
-Organizations can enforce global policies using enterprise settings that cannot be overridden:
+Organisations can enforce global policies using enterprise settings that cannot be overridden:
 
 - **`allowManagedHooksOnly`**: Block user/project hooks; load only managed and SDK hooks
 - **`disableBypassPermissionsMode`**: Prevent the `--dangerously-skip-permissions` flag
 - **`strictKnownMarketplaces`**: Allowlist plugin marketplace sources (exact matching required)
 
-### Standardized Practices
+### Standardised Practices
 
 Establish repository etiquette guidelines in `CLAUDE.md`:
 
@@ -532,7 +532,7 @@ MCP (Model Context Protocol) servers are powerful but potentially dangerous if l
 
 1. **Never use `enableAllProjectMcpServers: true`** - This is a security risk
 2. **Explicitly enable only trusted servers** - Review what each server does before enabling
-3. **Document approved MCP servers** - Maintain a list of organization-approved servers
+3. **Document approved MCP servers** - Maintain a list of organisation-approved servers
 4. **Audit server permissions** - Understand what data each server can access
 
 ```json
@@ -643,7 +643,7 @@ git commit -m "Detailed description of changes"
 
 ### 8. Regular Permission Audits
 
-**Maintenance practice**: Periodically review your permission settings:
+**Maintenance practise**: Periodically review your permission settings:
 
 ```bash
 # Review current permissions
@@ -657,7 +657,7 @@ cat .claude/settings.json
 
 ### 9. Planning Before Coding
 
-**Performance optimization**: Ask Claude to research and plan first for complex problems. This prevents premature implementation and reduces risky decisions.
+**Performance optimisation**: Ask Claude to research and plan first for complex problems. This prevents premature implementation and reduces risky decisions.
 
 ```bash
 # Start in plan mode for complex tasks
@@ -688,14 +688,14 @@ claude --mode plan
 
 ### 13. Use Devcontainers for Additional Isolation
 
-**Defense in depth**: Consider using VS Code devcontainers or Docker for an additional isolation layer:
+**Defence in depth**: Consider using VS Code devcontainers or Docker for an additional isolation layer:
 
 ```json
 // .devcontainer/devcontainer.json
 {
   "name": "Claude Code Environment",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:18",
-  "customizations": {
+  "customisations": {
     "vscode": {
       "extensions": ["claude.claude-code"]
     }
@@ -709,7 +709,7 @@ claude --mode plan
 ### 14. Document Project-Specific Constraints
 
 **Team alignment**: Create detailed CLAUDE.md files that document:
-- Unexpected behaviors or warnings particular to the project
+- Unexpected behaviours or warnings particular to the project
 - Specific commands that should never be run
 - Required testing procedures
 - Code style preferences

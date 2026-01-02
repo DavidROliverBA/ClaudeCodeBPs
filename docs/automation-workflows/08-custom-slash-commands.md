@@ -21,7 +21,7 @@ Slash commands provide a powerful abstraction layer between your intent and Clau
 
 ## Command Directory Structure
 
-Claude Code recognizes custom slash commands from two distinct locations, each serving different purposes:
+Claude Code recognises custom slash commands from two distinct locations, each serving different purposes:
 
 ### Project Commands: `.claude/commands/`
 
@@ -55,8 +55,8 @@ Example structure:
 ```
 ~/.claude/
 └── commands/
-    ├── analyze-architecture.md
-    ├── optimize-code.md
+    ├── analyse-architecture.md
+    ├── optimise-code.md
     └── personal/
         ├── daily-standup.md
         └── review-notes.md
@@ -68,16 +68,16 @@ Creating a custom slash command is straightforward. The filename (without `.md` 
 
 ### Simple Example
 
-Create `.claude/commands/optimize.md`:
+Create `.claude/commands/optimise.md`:
 ```markdown
-Analyze this code for performance issues and suggest optimizations. Focus on:
+Analyse this code for performance issues and suggest optimisations. Focus on:
 - Time complexity
 - Memory usage
 - Common bottlenecks
 - Best practices for the detected language
 ```
 
-**Usage:** Type `/optimize` in Claude Code, and Claude will execute this prompt.
+**Usage:** Type `/optimise` in Claude Code, and Claude will execute this prompt.
 
 ### Command Creation Steps
 
@@ -166,7 +166,7 @@ argument-hint: [issue-number] [additional-notes]
 
 Fix issue #$ARGUMENTS following our coding standards:
 1. Use the gh CLI to fetch issue details
-2. Analyze the problem and propose a solution
+2. Analyse the problem and propose a solution
 3. Implement the fix
 4. Write appropriate tests
 5. Update documentation if needed
@@ -239,7 +239,7 @@ allowed-tools: Bash(gh:*), Read, Edit, Grep, Glob
 Fix GitHub issue #$ARGUMENTS by following these steps:
 
 1. **Fetch issue details** using: `gh issue view $ARGUMENTS`
-2. **Analyze the problem** based on the issue description
+2. **Analyse the problem** based on the issue description
 3. **Search the codebase** for relevant files using Grep and Glob
 4. **Implement the solution** with proper error handling
 5. **Write or update tests** to cover the fix
@@ -281,7 +281,7 @@ Perform a thorough code review focusing on:
 
 ## Security
 - Input validation
-- Authentication/authorization
+- Authentication/authorisation
 - Common vulnerabilities (OWASP Top 10)
 
 ## Performance
@@ -314,7 +314,7 @@ Generate comprehensive test coverage for: $ARGUMENTS
 Steps:
 1. Read the file at $ARGUMENTS
 2. Detect the testing framework (Jest, pytest, Go testing, etc.)
-3. Analyze all functions, methods, and classes
+3. Analyse all functions, methods, and classes
 4. Generate tests covering:
    - Happy path scenarios
    - Edge cases
@@ -416,7 +416,7 @@ Understanding when to use project-level versus user-level commands is crucial fo
 - Commands are specific to the project's domain or architecture
 - The entire team should use the same workflow
 - Commands integrate with project-specific tools or processes
-- You want to standardize team practices
+- You want to standardise team practices
 
 **Examples:**
 - `/fix-github-issue` - Team's standard issue resolution workflow
@@ -440,13 +440,13 @@ Understanding when to use project-level versus user-level commands is crucial fo
 - Commands contain personal preferences or shortcuts
 
 **Examples:**
-- `/analyze-architecture` - Your personal architecture review checklist
+- `/analyse-architecture` - Your personal architecture review checklist
 - `/daily-standup` - Your standup report template
-- `/code-golf` - Personal code optimization experiments
+- `/code-golf` - Personal code optimisation experiments
 - `/explain-like-im-five` - Personal learning preference
 
 **Best Practices:**
-- Organize by category in subdirectories
+- Organise by category in subdirectories
 - Create a personal README documenting your commands
 - Back up your `~/.claude/commands/` directory
 - Share useful patterns with team (promote to project-level)
@@ -472,20 +472,20 @@ fix_issue.md         ✗ Avoid snake_case
 
 **Verb-first naming:**
 ```
-analyze-code.md       ✓ Action-oriented
+analyse-code.md       ✓ Action-oriented
 generate-tests.md     ✓ Clear purpose
 review-pr.md          ✓ Explicit action
 ```
 
 **Resource-focused naming:**
 ```
-code-analyzer.md      ~ Acceptable but less clear
+code-analyser.md      ~ Acceptable but less clear
 test-generator.md     ~ Less action-oriented
 ```
 
-### Namespace Organization
+### Namespace Organisation
 
-Organize related commands in subdirectories for logical grouping. The directory name provides context without affecting the command invocation.
+Organise related commands in subdirectories for logical grouping. The directory name provides context without affecting the command invocation.
 
 **Directory Structure:**
 ```
@@ -497,7 +497,7 @@ Organize related commands in subdirectories for logical grouping. The directory 
 ├── tools/
 │   ├── format-code.md            (/tools:format-code)
 │   ├── check-deps.md             (/tools:check-deps)
-│   └── analyze-bundle.md         (/tools:analyze-bundle)
+│   └── analyse-bundle.md         (/tools:analyse-bundle)
 └── github/
     ├── create-issue.md           (/github:create-issue)
     ├── review-pr.md              (/github:review-pr)
@@ -546,7 +546,7 @@ health-check.md
 ```
 lint-fix.md
 format-all.md
-analyze-complexity.md
+analyse-complexity.md
 check-security.md
 ```
 
@@ -575,7 +575,7 @@ Unstaged changes:
 Please explain:
 1. What changes are staged and why they might be grouped
 2. What's modified but not staged
-3. Suggestions for logical commit organization
+3. Suggestions for logical commit organisation
 4. Any potential issues or conflicts
 ```
 
@@ -594,12 +594,12 @@ argument-hint: [file1] [file2]
 
 Compare the implementation approaches between @$1 and @$2.
 
-Analyze:
+Analyse:
 1. Architectural differences
 2. Performance implications
 3. Code complexity and maintainability
 4. Best practices adherence
-5. Recommendation for which approach to standardize on
+5. Recommendation for which approach to standardise on
 
 Provide specific examples from both files.
 ```
@@ -608,7 +608,7 @@ Provide specific examples from both files.
 
 ### Pattern 3: Multi-Agent Workflows
 
-Create commands that delegate to multiple specialized "agents" for complex tasks.
+Create commands that delegate to multiple specialised "agents" for complex tasks.
 
 **File:** `.claude/commands/workflows/full-feature.md`
 ```markdown
@@ -619,7 +619,7 @@ argument-hint: [feature-description]
 
 Implement the following feature end-to-end: $ARGUMENTS
 
-Delegate to specialized agents in sequence:
+Delegate to specialised agents in sequence:
 
 ## Phase 1: Architecture (Architect Agent)
 - Design system architecture
@@ -642,7 +642,7 @@ Delegate to specialized agents in sequence:
 ## Phase 4: Security (Security Agent)
 - Review for vulnerabilities
 - Check input validation
-- Verify authentication/authorization
+- Verify authentication/authorisation
 - Scan dependencies
 
 ## Phase 5: Documentation (Documentation Agent)
@@ -687,7 +687,7 @@ Run the test suite for this project:
    - cargo test
    - mvn test / gradle test
 
-3. **Analyze results:**
+3. **Analyse results:**
    - Show pass/fail summary
    - Highlight any failing tests
    - Show coverage if available
@@ -715,9 +715,9 @@ Iteratively fix issues until all tests pass:
 
 ## Loop Process:
 1. Run test suite
-2. If all pass → DONE, summarize changes
+2. If all pass → DONE, summarise changes
 3. If failures exist:
-   a. Analyze the first failure
+   a. Analyse the first failure
    b. Identify root cause
    c. Implement fix
    d. Return to step 1
@@ -802,7 +802,7 @@ Generate a security audit report for this project:
 - XSS vulnerabilities
 - CSRF protection
 - Input validation
-- Authentication/authorization issues
+- Authentication/authorisation issues
 
 ### 3. Configuration Security
 - Environment variable handling
@@ -833,7 +833,7 @@ Generate a security audit report for this project:
 [Detailed list with remediation]
 
 ## Recommendations
-[Prioritized action items]
+[Prioritised action items]
 
 ## Compliance
 [Relevant standards: OWASP, PCI-DSS, etc.]
@@ -849,7 +849,7 @@ Save report to: `docs/security-audit-[date].md`
 **Be Explicit and Detailed:**
 ```markdown
 ❌ Fix the bug
-✓ Analyze the issue, identify root cause, implement fix, add tests, verify solution
+✓ Analyse the issue, identify root cause, implement fix, add tests, verify solution
 ```
 
 **Include Verification Steps:**
@@ -992,8 +992,8 @@ See `.claude/commands/` for full list and implementation details.
 
 **Avoid expensive operations without warning:**
 ```markdown
-❌ Analyze all files in the repository
-✓ Analyze all TypeScript files in src/ (approximately 50 files, ~30 seconds)
+❌ Analyse all files in the repository
+✓ Analyse all TypeScript files in src/ (approximately 50 files, ~30 seconds)
 ```
 
 **Provide progress indicators:**
@@ -1075,7 +1075,7 @@ Review GitHub PR #$ARGUMENTS:
 
 1. **Fetch PR details:** `gh pr view $ARGUMENTS`
 2. **Checkout branch:** `gh pr checkout $ARGUMENTS`
-3. **Analyze changes:**
+3. **Analyse changes:**
    - Get file list: `gh pr diff $ARGUMENTS --name-only`
    - Review each changed file
 4. **Check for:**
@@ -1233,7 +1233,7 @@ Custom slash commands transform Claude Code from a conversational AI assistant i
 1. **Start simple** - Begin with frequently-typed prompts
 2. **Iterate based on usage** - Refine commands as you learn what works
 3. **Share with your team** - Project commands create consistency
-4. **Organize thoughtfully** - Use namespaces and clear naming
+4. **Organise thoughtfully** - Use namespaces and clear naming
 5. **Document well** - Include argument hints and descriptions
 6. **Build safely** - Use tool restrictions and verification steps
 7. **Think reusably** - Design commands for repeated use

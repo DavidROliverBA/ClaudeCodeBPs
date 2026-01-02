@@ -7,7 +7,7 @@ A comprehensive guide to leveraging Claude Code's multimodal capabilities for vi
 1. [Overview](#overview)
 2. [Using Screenshots for Context](#using-screenshots-for-context)
 3. [Passing Image Files to Claude Code](#passing-image-files-to-claude-code)
-4. [Analyzing Diagrams and Wireframes](#analyzing-diagrams-and-wireframes)
+4. [Analysing Diagrams and Wireframes](#analysing-diagrams-and-wireframes)
 5. [UI/UX Design Implementation from Mockups](#uiux-design-implementation-from-mockups)
 6. [Debugging with Visual Context](#debugging-with-visual-context)
 7. [Supported Image Formats](#supported-image-formats)
@@ -19,11 +19,11 @@ A comprehensive guide to leveraging Claude Code's multimodal capabilities for vi
 
 ## Overview
 
-Claude Code is a multimodal agentic coding tool that excels at understanding and working with visual information. As a multimodal AI, Claude can analyze images, diagrams, screenshots, and mockups to help you code faster, debug more effectively, and implement designs with precision. The Claude 3 and 4 model families support vision capabilities, enabling you to work with JPG, PNG, GIF, and WebP formats seamlessly within your development workflow.
+Claude Code is a multimodal agentic coding tool that excels at understanding and working with visual information. As a multimodal AI, Claude can analyse images, diagrams, screenshots, and mockups to help you code faster, debug more effectively, and implement designs with precision. The Claude 3 and 4 model families support vision capabilities, enabling you to work with JPG, PNG, GIF, and WebP formats seamlessly within your development workflow.
 
 **Key Capabilities:**
 - Interpret UI mockups and generate corresponding code
-- Analyze error screenshots for debugging
+- Analyse error screenshots for debugging
 - Process architectural diagrams and flowcharts
 - Implement designs from wireframes
 - Compare visual results with design specifications
@@ -33,7 +33,7 @@ Claude Code is a multimodal agentic coding tool that excels at understanding and
 
 ## Using Screenshots for Context
 
-Screenshots are one of the most powerful ways to provide visual context to Claude Code. Whether you're showing a bug, demonstrating desired behavior, or providing design inspiration, screenshots enable precise communication.
+Screenshots are one of the most powerful ways to provide visual context to Claude Code. Whether you're showing a bug, demonstrating desired behaviour, or providing design inspiration, screenshots enable precise communication.
 
 ### macOS Screenshot Methods
 
@@ -47,7 +47,7 @@ cmd + ctrl + shift + 4
 ctrl + v  # Note: NOT cmd + v!
 ```
 
-**Important:** On macOS, you must use `ctrl + v` (not the standard `cmd + v`) to paste screenshots into Claude Code. This is a unique behavior specific to terminal applications and does not work remotely.
+**Important:** On macOS, you must use `ctrl + v` (not the standard `cmd + v`) to paste screenshots into Claude Code. This is a unique behaviour specific to terminal applications and does not work remotely.
 
 **Method 2: Drag and Drop**
 ```bash
@@ -59,7 +59,7 @@ ctrl + v  # Note: NOT cmd + v!
 **Method 3: File Path Reference**
 ```bash
 # Provide the path to a saved screenshot
-"Analyze this screenshot: /path/to/screenshot.png"
+"Analyse this screenshot: /path/to/screenshot.png"
 ```
 
 ### Remote Server Considerations
@@ -86,7 +86,7 @@ ctrl + v
 
 **Design Comparison:**
 ```bash
-# Show expected vs actual behavior
+# Show expected vs actual behaviour
 "Here's the design mockup [Image 1] and here's what I'm seeing [Image 2].
 Make the implementation match the mockup."
 ```
@@ -96,7 +96,7 @@ Make the implementation match the mockup."
 # 1. Ask Claude Code to build something
 # 2. Open in browser and screenshot the result
 # 3. Paste screenshot back to Claude
-# 4. Provide feedback: "The button in [Image #1] should be centered and blue"
+# 4. Provide feedback: "The button in [Image #1] should be centred and blue"
 ```
 
 ---
@@ -111,7 +111,7 @@ The most straightforward approach is to reference image files by their absolute 
 
 ```bash
 "Implement the design shown in ./designs/dashboard-mockup.png"
-"Analyze this architecture diagram: /home/user/project/docs/system-diagram.png"
+"Analyse this architecture diagram: /home/user/project/docs/system-diagram.png"
 "Debug the issue in screenshot-error.png and fix the code"
 ```
 
@@ -124,7 +124,7 @@ The most straightforward approach is to reference image files by their absolute 
 
 ### Multiple Images
 
-Claude Code can analyze multiple images in a single request:
+Claude Code can analyse multiple images in a single request:
 
 ```bash
 # Reference multiple images for comparison
@@ -155,14 +155,14 @@ For advanced workflows, you can integrate Claude Code with MCP servers to access
 **Puppeteer MCP Server:**
 ```bash
 # Automated screenshot capture
-# Claude can open web pages, capture screenshots, and analyze them
+# Claude can open web pages, capture screenshots, and analyse them
 "Open http://localhost:3000 in Puppeteer, take a screenshot,
 and identify any visual bugs"
 ```
 
 ---
 
-## Analyzing Diagrams and Wireframes
+## Analysing Diagrams and Wireframes
 
 Claude Code excels at interpreting technical diagrams, system architectures, and wireframes, enabling rapid translation from design to implementation.
 
@@ -279,18 +279,18 @@ One of Claude Code's most powerful capabilities is translating visual mockups in
 - Tailwind CSS for styling
 - Responsive design (mobile-first)
 - Use our existing component library from @/components
-- Match the exact spacing and colors shown"
+- Match the exact spacing and colours shown"
 ```
 
 3. **Iterate with Screenshots:**
 ```bash
 # After implementation, test and provide feedback
 "Here's what the implementation looks like [screenshot.png].
-The header spacing is too tight and the button color doesn't match.
+The header spacing is too tight and the button colour doesn't match.
 Adjust to match the original mockup."
 ```
 
-4. **Finalize:**
+4. **Finalise:**
 ```bash
 # When satisfied
 "The implementation now matches the mockup. Run tests and commit the changes."
@@ -322,7 +322,7 @@ When you have an established design system, Claude Code can ensure mockup implem
 ```bash
 "Implement this settings page mockup [settings.png] using only components
 and tokens from our design system. The design system is defined in:
-- /src/design-tokens.ts (colors, spacing, typography)
+- /src/design-tokens.ts (colours, spacing, typography)
 - /src/components/ui/ (reusable components)
 
 Do not create custom components unless absolutely necessary."
@@ -336,14 +336,14 @@ With the Figma MCP Server, you can create a direct pipeline:
 # Direct Figma integration
 "Access the 'Dashboard V2' frame in our Figma file and generate:
 1. React components matching the layer structure
-2. CSS using the exact colors and spacing from Figma
+2. CSS using the exact colours and spacing from Figma
 3. Export assets that are marked for export
 4. Create a Storybook story for the component"
 ```
 
-### Emphasizing Visual Quality
+### Emphasising Visual Quality
 
-To ensure Claude prioritizes aesthetics:
+To ensure Claude prioritises aesthetics:
 
 ```bash
 # Explicitly state visual importance
@@ -351,7 +351,7 @@ To ensure Claude prioritizes aesthetics:
 It's crucial that the result is aesthetically pleasing and matches
 the mockup exactly. Pay special attention to:
 - Precise spacing and alignment
-- Exact color matches
+- Exact colour matches
 - Smooth animations
 - Typography hierarchy
 - Visual balance"
@@ -382,7 +382,7 @@ Screenshots transform debugging from text descriptions to visual demonstration, 
 
 **Instead of this:**
 ```bash
-"The button on the homepage is not aligned properly and the color seems off"
+"The button on the homepage is not aligned properly and the colour seems off"
 ```
 
 **Do this:**
@@ -479,7 +479,7 @@ Claude Code supports these image formats:
 The following formats are **NOT** supported:
 - **BMP** (.bmp) - Convert to PNG or JPEG
 - **TIFF** (.tif, .tiff) - Convert to PNG or JPEG
-- **SVG** (.svg) - Convert to PNG for analysis (though SVG code can be analyzed as text)
+- **SVG** (.svg) - Convert to PNG for analysis (though SVG code can be analysed as text)
 
 **Conversion Tip:**
 ```bash
@@ -535,8 +535,8 @@ When working with multiple images:
 # Claude.ai: 20 images
 # API: 100 images (subject to 32MB total)
 
-# Good practice
-"Analyze these UI mockup variations:
+# Good practise
+"Analyse these UI mockup variations:
 [mockup-v1.png]  # 800 KB, 1920x1080
 [mockup-v2.png]  # 750 KB, 1920x1080
 [mockup-v3.png]  # 820 KB, 1920x1080
@@ -547,7 +547,7 @@ Total: ~2.4 MB - well within limits"
 
 ## Best Practices for Image-Based Prompts
 
-Maximize Claude Code's effectiveness with images by following these proven practices.
+Maximise Claude Code's effectiveness with images by following these proven practices.
 
 ### 1. Place Images Before Text
 
@@ -569,7 +569,7 @@ Claude performs best when images come before text in your prompt:
 When using multiple images, provide clear labels:
 
 ```bash
-# Structured labeling
+# Structured labelling
 "Image 1: Desktop mockup [desktop.png]
 Image 2: Tablet mockup [tablet.png]
 Image 3: Mobile mockup [mobile.png]
@@ -593,7 +593,7 @@ Combine visual context with detailed instructions:
 "Implement this product page mockup with these requirements:
 - Header: sticky position, 80px height, white background with shadow
 - Product image: 50% width on desktop, full width on mobile
-- CTA button: #FF6B6B color, 16px padding, rounded corners
+- CTA button: #FF6B6B colour, 16px padding, rounded corners
 - Use Inter font family throughout
 - Maintain exact spacing shown in mockup (use 8px grid system)"
 ```
@@ -622,7 +622,7 @@ For dense diagrams or detailed mockups:
 [complex-dashboard.png]
 "List all the distinct sections and components in this dashboard mockup"
 
-# Step 2: Prioritize
+# Step 2: Prioritise
 "Which sections should be implemented first for an MVP?"
 
 # Step 3: Implement incrementally
@@ -645,7 +645,7 @@ a remember me checkbox, and a blue submit button that says Sign In"
 "Implement this login form"
 ```
 
-### 7. Emphasize Visual Quality
+### 7. Emphasise Visual Quality
 
 When aesthetics matter, explicitly state it:
 
@@ -676,12 +676,12 @@ When implementing from mockups, reference your design system:
 ```bash
 [new-feature-mockup.png]
 "Implement this mockup using our design system:
-- Colors are defined in /src/styles/colors.ts
+- Colours are defined in /src/styles/colours.ts
 - Use components from /src/components/ui
 - Follow spacing system in /src/styles/spacing.ts
 - Typography is in /src/styles/typography.ts
 
-Do not use custom colors or create new components unless the mockup
+Do not use custom colours or create new components unless the mockup
 requires something truly unique."
 ```
 
@@ -709,7 +709,7 @@ Create tight feedback loops for iteration:
 [implementation-screenshot.png]
 "The implementation looks good, but:
 1. Avatar should be larger (100px instead of 64px)
-2. Bio text should be left-aligned, not centered
+2. Bio text should be left-aligned, not centred
 3. The edit button needs more padding
 Update the code to address these issues"
 
@@ -764,7 +764,7 @@ displayed as 'John Doe' based on the data in users.json"
 
 #### 2. Spatial Reasoning
 
-**Limitation:** Limited ability to determine precise positions and layouts. May struggle with analog clocks, chess positions, or complex spatial arrangements.
+**Limitation:** Limited ability to determine precise positions and layouts. May struggle with analogue clocks, chess positions, or complex spatial arrangements.
 
 **Workaround:**
 ```bash
@@ -799,7 +799,7 @@ matching the layout shown in the screenshot"
 
 **Limitation:** Not designed for complex diagnostic scans (CTs, MRIs, etc.). Should not replace professional medical advice.
 
-**Use Case:** Can analyze general medical diagrams or educational illustrations, but not diagnostic imagery.
+**Use Case:** Can analyse general medical diagrams or educational illustrations, but not diagnostic imagery.
 
 #### 6. Metadata Processing
 
@@ -883,8 +883,8 @@ done
 
 **Workaround:**
 ```bash
-# Optimize to ~1.15 megapixels (e.g., 1200x960)
-convert mockup.png -resize 1200x960 optimized-mockup.png
+# Optimise to ~1.15 megapixels (e.g., 1200x960)
+convert mockup.png -resize 1200x960 optimised-mockup.png
 ```
 
 #### Token Usage
@@ -907,7 +907,7 @@ convert mockup.png -resize 1200x960 optimized-mockup.png
 ```bash
 # Always verify critical interpretations
 [database-schema.png]
-"Analyze this database schema and list all tables and relationships you see.
+"Analyse this database schema and list all tables and relationships you see.
 I'll verify your interpretation before we generate the migration files."
 
 # Review Claude's analysis, then proceed
@@ -1006,9 +1006,9 @@ with the original Figma design"
 
 # Step 5: Iterate
 [comparison-screenshot.png]
-"Adjust spacing and colors to match Figma more closely"
+"Adjust spacing and colours to match Figma more closely"
 
-# Step 6: Finalize
+# Step 6: Finalise
 "Run tests, ensure accessibility, and create PR"
 ```
 
@@ -1045,14 +1045,14 @@ Systematic debugging with visual feedback:
 "Open http://localhost:3000/checkout in browser, take a screenshot,
 and attach it to see if the fix worked"
 
-# Analyze result
+# Analyse result
 [post-fix-screenshot.png]
 "The main issue is fixed, but now the footer is misaligned. Fix that too."
 
 # Verify complete fix
 "Take another screenshot to verify all issues are resolved"
 
-# Finalize
+# Finalise
 "All issues fixed. Run tests and commit with message:
 'Fix layout issues on checkout page'"
 ```
@@ -1086,7 +1086,7 @@ Generate docs with screenshot references:
 [feature-screenshot.png]
 
 "Generate user documentation for this feature:
-1. Analyze the screenshot to understand the UI
+1. Analyse the screenshot to understand the UI
 2. Write step-by-step instructions with numbered references to UI elements
 3. Create a markdown file in /docs/features/
 4. Include tips and common issues
@@ -1119,7 +1119,7 @@ Create an ASCII wireframe formalizing this design."
 "The functionality works. Now refine the UI:
 - Smoother animations
 - Better spacing
-- Professional color scheme
+- Professional colour scheme
 - Accessibility improvements"
 ```
 
@@ -1149,7 +1149,7 @@ Ensure implementations follow design system:
 Compare it against our design system in /src/design-system/.
 
 Check:
-- Color usage (must use design tokens)
+- Colour usage (must use design tokens)
 - Typography (must use defined font styles)
 - Spacing (must use 8px grid)
 - Components (must use existing components)
@@ -1171,7 +1171,7 @@ Build error documentation with screenshots:
 5. Network error: [error-network.png]
 
 For each error:
-1. Analyze the screenshot
+1. Analyse the screenshot
 2. Document the likely cause
 3. Provide user-friendly solution steps
 4. Add developer debugging tips
@@ -1185,7 +1185,7 @@ Identify and fix accessibility issues:
 ```bash
 [page-screenshot.png]
 "Audit this page for accessibility issues:
-1. Check color contrast ratios
+1. Check colour contrast ratios
 2. Identify missing alt text
 3. Check keyboard navigation flow
 4. Verify ARIA labels
@@ -1213,7 +1213,7 @@ Claude Code's multimodal capabilities transform how you interact with code. By l
 - **Know the limits**: Understand format restrictions and workarounds
 - **Think in workflows**: Build sophisticated pipelines combining visual and code analysis
 
-Whether you're implementing UI mockups, debugging visual issues, analyzing architecture diagrams, or building from wireframes, Claude Code's vision capabilities make you more productive. Start incorporating visual context into your Claude Code workflow today.
+Whether you're implementing UI mockups, debugging visual issues, analysing architecture diagrams, or building from wireframes, Claude Code's vision capabilities make you more productive. Start incorporating visual context into your Claude Code workflow today.
 
 ---
 

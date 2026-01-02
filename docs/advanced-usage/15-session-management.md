@@ -11,7 +11,7 @@ Session management is one of the most critical aspects of working effectively wi
 - [Managing Long Conversations](#managing-long-conversations)
 - [Context Window Considerations](#context-window-considerations)
 - [When to Start Fresh vs Resume](#when-to-start-fresh-vs-resume)
-- [Best Practices for Session Organization](#best-practices-for-session-organization)
+- [Best Practices for Session Organisation](#best-practices-for-session-organisation)
 
 ---
 
@@ -96,7 +96,7 @@ Monitor your token usage in real-time:
 /context
 ```
 
-This displays a breakdown of how your 200K token context window is being utilized, helping you understand when you need to `/clear` or `/compact`.
+This displays a breakdown of how your 200K token context window is being utilised, helping you understand when you need to `/clear` or `/compact`.
 
 ### The `/stats` Command
 
@@ -184,7 +184,7 @@ claude --resume old-session-id
 # Resume a session from days ago to ask about specific solutions
 claude --resume
 # Select old session, then ask:
-# "Can you summarize how you overcame the authentication error in this session?"
+# "Can you summarise how you overcame the authentication error in this session?"
 ```
 
 ### Key Differences: `-c` vs `-r`
@@ -218,7 +218,7 @@ This JSON Lines file contains records of all your conversations.
 ```
 ~/.claude/projects/
 ```
-Complete conversation data organized by project directory.
+Complete conversation data organised by project directory.
 
 **Session Files:**
 ```
@@ -228,7 +228,7 @@ Individual session files that can be manually managed.
 
 ### Session Persistence Options
 
-**Default Behavior:**
+**Default Behaviour:**
 Sessions are automatically persisted with full history.
 
 **Disable Persistence (API/SDK):**
@@ -292,14 +292,14 @@ Long-running sessions require special attention to maintain quality and prevent 
 
 ### The `/compact` Command
 
-Summarize your conversation to save tokens while preserving important context:
+Summarise your conversation to save tokens while preserving important context:
 
 ```bash
 /compact
 ```
 
 **How it works:**
-- Analyzes the current conversation
+- Analyses the current conversation
 - Creates a concise summary of key decisions and context
 - Starts a fresh session with the summary preloaded
 - Dramatically reduces token count while maintaining continuity
@@ -311,7 +311,7 @@ Summarize your conversation to save tokens while preserving important context:
 
 ### Auto-Compaction
 
-Claude Code automatically compacts conversations when approaching the 200K token limit, allowing indefinite work without failure. You can customize this behavior with:
+Claude Code automatically compacts conversations when approaching the 200K token limit, allowing indefinite work without failure. You can customise this behaviour with:
 
 ```bash
 /config
@@ -387,7 +387,7 @@ Break large tasks into smaller pieces that fit comfortably within optimal contex
 /context
 ```
 
-### Context Window Optimization Strategies
+### Context Window Optimisation Strategies
 
 **1. Leverage CLAUDE.md Files**
 - Document project information once in `CLAUDE.md`
@@ -398,10 +398,10 @@ Break large tasks into smaller pieces that fit comfortably within optimal contex
 **2. Provide Specific File References**
 ```bash
 # Instead of broad context dumps
-Can you analyze the authentication flow?
+Can you analyse the authentication flow?
 
 # Be specific
-Can you analyze @src/auth/login.ts and @src/auth/session.ts?
+Can you analyse @src/auth/login.ts and @src/auth/session.ts?
 ```
 
 **3. Use Tab-Completion**
@@ -437,7 +437,7 @@ Knowing when to start a new session versus resuming an old one is critical for e
 - Moving from debugging to feature development
 - Changing programming languages or frameworks
 
-✅ **You Need Different Behavior**
+✅ **You Need Different Behaviour**
 - Want to test different approaches
 - Previous session had incorrect assumptions
 - Starting with updated requirements
@@ -478,16 +478,16 @@ This creates a new branch from a previous conversation state.
 
 ---
 
-## Best Practices for Session Organization
+## Best Practices for Session Organisation
 
-Effective session management requires both technical understanding and organizational discipline.
+Effective session management requires both technical understanding and organisational discipline.
 
 ### 1. Adopt "Explore, Plan, Code, Commit" Workflows
 
 **Exploration Phase:**
 ```bash
 claude
-"Analyze the current authentication implementation"
+"Analyse the current authentication implementation"
 "What are the security implications?"
 "Show me similar patterns in the codebase"
 ```
@@ -643,7 +643,7 @@ Don't wait for problems:
 /compact  # or /clear depending on needs
 ```
 
-### 10. Document Session Organization in Team Memory
+### 10. Document Session Organisation in Team Memory
 
 Share your workflow with your team in the project's `CLAUDE.md`:
 
@@ -721,14 +721,14 @@ claude --resume --model opus   # Resume with different model
 
 # In-Session Commands
 /clear                         # Wipe conversation history
-/compact                       # Summarize and restart with summary
+/compact                       # Summarise and restart with summary
 /context                       # Show token usage breakdown
 /cost                          # Show cost metrics
 /stats                         # Show activity summary
 /memory                        # Edit CLAUDE.md file
 /init                          # Bootstrap CLAUDE.md
 /rename "New Name"             # Rename current session
-/config                        # Customize settings
+/config                        # Customise settings
 /permissions                   # Manage tool allowlist
 
 # Keyboard Shortcuts
@@ -771,7 +771,7 @@ Up/Down Arrows                 # Navigate prompt history
 ### "Performance degrading during long sessions"
 **Solutions:**
 - Check context usage: `/context`
-- Summarize with: `/compact`
+- Summarise with: `/compact`
 - Clear and restart: `/clear`
 - Update `CLAUDE.md` with learnings before clearing
 
@@ -779,7 +779,7 @@ Up/Down Arrows                 # Navigate prompt history
 
 ## Conclusion
 
-Effective session management in Claude Code is the difference between chaotic, expensive, low-quality development sessions and streamlined, cost-efficient, high-quality workflows. By mastering the tools and techniques in this guide—from strategic `/clear` usage to intelligent conversation resumption and context window optimization—you can unlock Claude Code's full potential.
+Effective session management in Claude Code is the difference between chaotic, expensive, low-quality development sessions and streamlined, cost-efficient, high-quality workflows. By mastering the tools and techniques in this guide—from strategic `/clear` usage to intelligent conversation resumption and context window optimisation—you can unlock Claude Code's full potential.
 
 **Key Takeaways:**
 
@@ -787,11 +787,11 @@ Effective session management in Claude Code is the difference between chaotic, e
 2. **Leverage `-c` and `-r` flags** to resume conversations intelligently
 3. **Monitor context usage** with `/context` to avoid performance degradation
 4. **Maintain `CLAUDE.md` files** for persistent project memory
-5. **Organize sessions logically** with naming, forking, and strategic workflows
+5. **Organise sessions logically** with naming, forking, and strategic workflows
 6. **Course correct early** when Claude goes off track
 7. **Commit frequently** to create natural session boundaries
 
-Session management isn't just a technical skill—it's a development philosophy that emphasizes focus, clarity, and intentional context management. Master these principles, and you'll find your Claude Code sessions becoming more productive, more efficient, and more enjoyable.
+Session management isn't just a technical skill—it's a development philosophy that emphasises focus, clarity, and intentional context management. Master these principles, and you'll find your Claude Code sessions becoming more productive, more efficient, and more enjoyable.
 
 ---
 

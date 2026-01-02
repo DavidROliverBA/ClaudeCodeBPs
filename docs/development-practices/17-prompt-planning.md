@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Prompt planning is a critical strategy for maximizing the effectiveness of Claude Code, Anthropic's agentic coding assistant. By creating structured planning documents before implementation, you enable Claude to better understand project requirements, maintain context across sessions, and deliver more accurate results. This guide covers best practices, workflows, and templates for documentation-first development with Claude Code.
+Prompt planning is a critical strategy for maximising the effectiveness of Claude Code, Anthropic's agentic coding assistant. By creating structured planning documents before implementation, you enable Claude to better understand project requirements, maintain context across sessions, and deliver more accurate results. This guide covers best practices, workflows, and templates for documentation-first development with Claude Code.
 
 ## 1. Using spec.md Files for Project Specifications
 
@@ -14,7 +14,7 @@ A `spec.md` file is a project specification document that defines requirements, 
 
 A well-structured spec.md should include:
 
-- **Problem Statement**: Current behavior, expected behavior, and impact
+- **Problem Statement**: Current behaviour, expected behaviour, and impact
 - **Requirements**: Functional and non-functional requirements
 - **Technical Approach**: High-level solution architecture
 - **Tech Stack**: Technologies, frameworks, and dependencies
@@ -29,10 +29,10 @@ A well-structured spec.md should include:
 
 ## Problem Statement
 
-**Current Behavior:**
+**Current Behaviour:**
 [Describe what currently exists or doesn't work]
 
-**Expected Behavior:**
+**Expected Behaviour:**
 [Describe the desired outcome]
 
 **Impact:**
@@ -125,7 +125,7 @@ A `prompt_plan.md` file breaks down complex implementations into sequential, man
 **Objective:** Understand current state and gather requirements
 
 **Prompts:**
-1. "Analyze the current codebase architecture focusing on [area]"
+1. "Analyse the current codebase architecture focusing on [area]"
 2. "Research best practices for [technology/pattern]"
 3. "Document findings in RESEARCH.md"
 
@@ -281,7 +281,7 @@ Each phase should have:
 - Authentication integration
 **Checkpoint:** User can register and login
 
-## Phase 2: Product Catalog
+## Phase 2: Product Catalogue
 - Product models and schema
 - Admin CRUD interface
 - Public product listing
@@ -340,7 +340,7 @@ Your `CLAUDE.md` file becomes part of Claude's system prompt in every conversati
 ### Code Style
 - Use [style guide]
 - Follow [naming conventions]
-- Organize code as [structure pattern]
+- Organise code as [structure pattern]
 
 ### Testing Requirements
 - Unit tests required for [components]
@@ -380,7 +380,7 @@ Your `CLAUDE.md` file becomes part of Claude's system prompt in every conversati
 
 ## Project-Specific Notes
 - [Important warnings or gotchas]
-- [Environment-specific behaviors]
+- [Environment-specific behaviours]
 - [Team conventions]
 ```
 
@@ -417,7 +417,7 @@ For spec-driven development, create a `constitution.md` that establishes non-neg
 4. **Performance Standards**
    - Page load under 2 seconds
    - API responses under 200ms
-   - Database queries optimized
+   - Database queries optimised
 
 5. **Accessibility**
    - WCAG 2.1 AA compliance
@@ -565,7 +565,7 @@ Access Plan Mode via `Shift+Tab` twice or `claude --permission-mode plan`.
 
 **Workflow:**
 1. Enter Plan Mode
-2. Ask Claude to analyze and create a plan
+2. Ask Claude to analyse and create a plan
 3. Review the generated plan.md
 4. Exit Plan Mode (Shift+Tab)
 5. Claude reads plan.md and begins implementation
@@ -583,7 +583,7 @@ Access Plan Mode via `Shift+Tab` twice or `claude --permission-mode plan`.
 - Improve edge case coverage
 - **Checkpoint:** Commit to Git
 
-## Iteration 3: Optimization
+## Iteration 3: Optimisation
 - Performance improvements
 - Code cleanup and refactoring
 - **Checkpoint:** Commit to Git
@@ -602,7 +602,7 @@ Access Plan Mode via `Shift+Tab` twice or `claude --permission-mode plan`.
 - Get visual feedback, refine, repeat
 
 **Test-Driven Iteration:**
-1. Write test with expected behavior
+1. Write test with expected behaviour
 2. Run test (should fail)
 3. Implement code
 4. Run test (should pass)
@@ -671,7 +671,7 @@ Use documentation to track high-level progress and maintain direction across ses
 ## Progress Overview
 
 ### Phase 1: Research & Discovery ✅
-- [x] Analyzed current architecture
+- [x] Analysed current architecture
 - [x] Researched authentication patterns
 - [x] Documented findings in RESEARCH.md
 - **Git Checkpoint:** commit abc123
@@ -802,7 +802,7 @@ For complex, multi-step tasks, Claude Code's TodoWrite tool automatically tracks
 
 ## 7. Best Practices for Planning Documents
 
-### Location and Organization
+### Location and Organisation
 
 **Recommended Directory Structure:**
 
@@ -876,7 +876,7 @@ Make the app faster
 
 ✅ Good:
 ```markdown
-Optimize page load performance:
+Optimise page load performance:
 - Initial page load < 2 seconds
 - Time to Interactive (TTI) < 3 seconds
 - Lighthouse performance score > 90
@@ -896,7 +896,7 @@ Optimize page load performance:
 **4. Include Examples**
 
 ```markdown
-## Expected Behavior
+## Expected Behaviour
 
 When user submits login form:
 
@@ -930,7 +930,7 @@ When user submits login form:
 
 ### Document Maintenance
 
-**1. Keep Documents Synchronized**
+**1. Keep Documents Synchronised**
 
 When implementation deviates from plan:
 - Update spec.md with actual implementation
@@ -943,7 +943,7 @@ When implementation deviates from plan:
 .claude/specs/
 ├── completed/
 │   ├── 001-user-auth/
-│   └── 002-product-catalog/
+│   └── 002-product-catalogue/
 └── active/
     └── 003-shopping-cart/
 ```
@@ -1123,10 +1123,10 @@ GET /api/endpoint/:id
 
 ## Problem Description
 
-### Current Behavior
+### Current Behaviour
 [What's happening now]
 
-### Expected Behavior
+### Expected Behaviour
 [What should happen]
 
 ### Impact
@@ -1274,14 +1274,14 @@ If fix causes issues:
 ## Migration Strategy
 
 ### Phase 1: Preparation
-- [ ] Write comprehensive tests for current behavior
+- [ ] Write comprehensive tests for current behaviour
 - [ ] Document all current functionality
 - [ ] Identify all call sites
 
 ### Phase 2: Incremental Refactoring
 - [ ] Refactor component A (maintain tests)
 - [ ] Refactor component B (maintain tests)
-- [ ] Verify no behavioral changes
+- [ ] Verify no behavioural changes
 
 ### Phase 3: Cleanup
 - [ ] Remove deprecated code
@@ -1344,7 +1344,7 @@ git push origin main
 
 [One sentence describing the sprint objective]
 
-## Prioritized Backlog
+## Prioritised Backlog
 
 ### P0 - Must Have
 1. **[Task 1]** - [Estimate] - [Owner]
@@ -1415,7 +1415,7 @@ Effective prompt planning transforms Claude Code from a reactive coding assistan
 3. **Break down complexity**: Phase-based implementation prevents overwhelm and drift
 4. **Track progress rigorously**: Use Git checkpoints and progress documentation
 5. **Iterate and refine**: Review, approve, and improve at each phase boundary
-6. **Create team templates**: Standardize planning across your organization
+6. **Create team templates**: Standardise planning across your organisation
 7. **Maintain context**: Well-structured documents enable Claude to resume work across sessions
 
 ### Next Steps
@@ -1426,7 +1426,7 @@ Effective prompt planning transforms Claude Code from a reactive coding assistan
 4. Try Plan Mode on your next feature
 5. Establish a spec-driven workflow for your team
 
-By following these practices, you'll maximize Claude Code's capabilities and build better software faster.
+By following these practices, you'll maximise Claude Code's capabilities and build better software faster.
 
 ---
 
@@ -1442,7 +1442,7 @@ By following these practices, you'll maximize Claude Code's capabilities and bui
 - [Spec-Driven Development Guide](https://www.arsturn.com/blog/spec-driven-development-with-claude-code)
 - [GitHub: claude-code-spec-workflow](https://github.com/Pimzino/claude-code-spec-workflow)
 - [Checkpointing Code Projects with AI](https://hamy.xyz/blog/2025-07_ai-checkpointing)
-- [CLAUDE.md Best Practices](https://arize.com/blog/claude-md-best-practices-learned-from-optimizing-claude-code-with-prompt-learning/)
+- [CLAUDE.md Best Practices](https://arize.com/blog/claude-md-best-practices-learned-from-optimising-claude-code-with-prompt-learning/)
 
 ### Tools and Extensions
 - [GitHub Spec Kit](https://github.com/github/spec-kit)

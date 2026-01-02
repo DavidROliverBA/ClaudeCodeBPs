@@ -16,7 +16,7 @@
 
 ## Introduction
 
-Claude Code hooks are user-defined shell commands that execute automatically at specific points in the agent lifecycle. They provide deterministic control over Claude's behavior, transforming suggestions into app-level guarantees. As stated in the official documentation: hooks "turn suggestions into app-level code that executes every time it is expected to run."
+Claude Code hooks are user-defined shell commands that execute automatically at specific points in the agent lifecycle. They provide deterministic control over Claude's behaviour, transforming suggestions into app-level guarantees. As stated in the official documentation: hooks "turn suggestions into app-level code that executes every time it is expected to run."
 
 Hooks execute with your current environment's credentials and can access, modify, or delete any files your user account can reach. This power makes them invaluable for automation while requiring careful security consideration.
 
@@ -46,7 +46,7 @@ Fires when users submit prompts, before Claude processes them. Enables:
 - Injecting project-specific context
 
 ### 4. **PermissionRequest** (v2.0.45+)
-Triggers when permission dialogs appear. Allows:
+Triggers when permission dialogues appear. Allows:
 - Automated approval/denial logic
 - Custom permission workflows
 - Audit logging of permission requests
@@ -55,7 +55,7 @@ Triggers when permission dialogs appear. Allows:
 Activates when agents finish responding. Useful for:
 - End-of-turn quality gates
 - AI-powered feedback generation
-- Session summarization
+- Session summarisation
 - Post-completion notifications
 
 ### 6. **Notification**
@@ -135,7 +135,7 @@ Matchers are **case-sensitive** and support multiple patterns:
 ```json
 {
   "type": "prompt",
-  "prompt": "Analyze the agent's response for quality issues"
+  "prompt": "Analyse the agent's response for quality issues"
 }
 ```
 
@@ -147,7 +147,7 @@ Instead of manually editing JSON, use the `/hooks` interactive command:
 3. Register command
 4. Save to desired settings level
 
-This approach minimizes syntax errors and provides a safer configuration experience.
+This approach minimises syntax errors and provides a safer configuration experience.
 
 ## Pre-Tool-Use and Post-Tool-Use Hooks
 
@@ -195,7 +195,7 @@ exit 0
 INPUT=$(cat)
 FILE_PATH=$(echo "$INPUT" | jq -r '.tool_input.file_path')
 
-# Normalize path
+# Normalise path
 CORRECTED_PATH=$(realpath -m "$FILE_PATH")
 
 # Output modified JSON
@@ -443,7 +443,7 @@ For a typical tool invocation, hooks execute in this sequence:
 - Timeouts apply per command independently
 - One slow hook doesn't delay others
 
-### Timeout Behavior
+### Timeout Behaviour
 
 ```json
 {
@@ -471,7 +471,7 @@ This prevents malicious external modifications from auto-executing.
 
 ### Exit Codes
 
-| Exit Code | Behavior | Output Handling |
+| Exit Code | Behaviour | Output Handling |
 |-----------|----------|-----------------|
 | **0** | Success | stdout shown in verbose mode; JSON parsed for control |
 | **2** | Blocking error | stderr shown to user/Claude; execution prevented |
@@ -865,7 +865,7 @@ Transform tool inputs before execution:
 INPUT=$(cat)
 FILE_PATH=$(echo "$INPUT" | jq -r '.tool_input.file_path')
 
-# Normalize path
+# Normalise path
 NORMALIZED=$(realpath -m "$FILE_PATH")
 
 # Replace tilde with home
@@ -958,7 +958,7 @@ INPUT=$(cat)
 TRANSCRIPT=$(echo "$INPUT" | jq -r '.transcript_path')
 
 # Generate completion summary using Claude
-SUMMARY=$(cat "$TRANSCRIPT" | claude analyze --prompt "Summarize what was accomplished")
+SUMMARY=$(cat "$TRANSCRIPT" | claude analyse --prompt "Summarise what was accomplished")
 
 # Convert to audio feedback
 echo "$SUMMARY" | text-to-speech --voice samantha
@@ -1223,7 +1223,7 @@ echo $?  # Check exit code
 **4. Hook timeout**:
 - Increase timeout in configuration
 - Move slow operations to background
-- Optimize hook execution speed
+- Optimise hook execution speed
 
 **5. Path issues**:
 ```bash
@@ -1255,7 +1255,7 @@ cat "$FILE_PATH"
 
 ## Conclusion
 
-Claude Code hooks transform the agent from a helpful assistant into a reliable, deterministic development tool. By encoding requirements as hooks rather than relying on prompts, you ensure consistent behavior across all sessions.
+Claude Code hooks transform the agent from a helpful assistant into a reliable, deterministic development tool. By encoding requirements as hooks rather than relying on prompts, you ensure consistent behaviour across all sessions.
 
 Key takeaways:
 

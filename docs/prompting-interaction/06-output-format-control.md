@@ -25,7 +25,7 @@ The key to effective output control lies in understanding Claude Code's hierarch
 
 ### What Are Output Styles?
 
-Output styles are specialized personas that transform how Claude Code communicates and presents information while retaining all core capabilities like file manipulation, script execution, and TODO tracking. Think of them as different "modes" that control the tone, verbosity, and structure of Claude's responses.
+Output styles are specialised personas that transform how Claude Code communicates and presents information while retaining all core capabilities like file manipulation, script execution, and TODO tracking. Think of them as different "modes" that control the tone, verbosity, and structure of Claude's responses.
 
 ### Built-in Output Styles
 
@@ -90,7 +90,7 @@ description: Verbose documentation-focused output
 
 # Documentation Focus
 
-- Prioritize comprehensive inline comments
+- Prioritise comprehensive inline comments
 - Generate detailed docstrings for all functions
 - Explain architectural decisions
 - Include usage examples in documentation
@@ -111,7 +111,7 @@ Claude Code implements a sophisticated hierarchical memory system with four leve
 3. **Project Rules** - Modular instructions in `./.claude/rules/*.md`
 4. **User Memory** - Personal preferences in `~/.claude/CLAUDE.md`
 
-**Critical Principle:** CLAUDE.md content is treated as **authoritative system rules**, while user prompts are interpreted as flexible requests. This hierarchy ensures consistent behavior and higher instruction adherence throughout your sessions.
+**Critical Principle:** CLAUDE.md content is treated as **authoritative system rules**, while user prompts are interpreted as flexible requests. This hierarchy ensures consistent behaviour and higher instruction adherence throughout your sessions.
 
 ### File Locations and Discovery
 
@@ -165,7 +165,7 @@ Imports support recursive inclusion up to 5 levels deep and are not evaluated in
 
 ### Modular Rules System
 
-The `.claude/rules/` directory enables organized, topic-specific instructions. All `.md` files in this directory are automatically loaded with the same priority as `.claude/CLAUDE.md`.
+The `.claude/rules/` directory enables organised, topic-specific instructions. All `.md` files in this directory are automatically loaded with the same priority as `.claude/CLAUDE.md`.
 
 **Path-Specific Rules:**
 ```markdown
@@ -293,10 +293,10 @@ feature/
 - Avoid wildcard imports (`from x import *`)
 ```
 
-### Code Organization Rules
+### Code Organisation Rules
 
 ```markdown
-## File Organization
+## File Organisation
 
 - Max file length: 300 lines
 - One class/component per file (except tightly coupled helpers)
@@ -494,7 +494,7 @@ class AuthService {
 **DO comment:**
 - Complex algorithms or business logic
 - Non-obvious workarounds or bug fixes
-- Performance optimizations
+- Performance optimisations
 - Regex patterns
 - Security-sensitive code
 
@@ -567,7 +567,7 @@ description: Ultra-concise technical responses
 # Communication Protocol
 
 - Maximum 3 sentences per response unless complex analysis required
-- No preambles, acknowledgments, or sign-offs
+- No preambles, acknowledgements, or sign-offs
 - Bullet points over prose paragraphs
 - Code snippets over verbal explanations
 - Assume expert-level knowledge
@@ -593,7 +593,7 @@ If Claude includes unnecessary preambles, use prefilling or explicit requests:
 ```
 Skip the preamble and get straight to the answer.
 
-No acknowledgment needed, just show me the code.
+No acknowledgement needed, just show me the code.
 
 Direct implementation only, hold all explanations.
 ```
@@ -603,10 +603,10 @@ Direct implementation only, hold all explanations.
 **Non-Interactive Mode:**
 ```bash
 # Print mode: just results, no interaction
-claude -p "analyze code quality" --output-format json
+claude -p "analyse code quality" --output-format json
 
-# Suppress color for piping
-claude --no-color
+# Suppress colour for piping
+claude --no-colour
 
 # Quiet mode (if available in your version)
 claude --quiet
@@ -634,7 +634,7 @@ claude
 - Maximum 100 words explanation unless requested
 ```
 
-### Claude 4.5 Model Behavior
+### Claude 4.5 Model Behaviour
 
 The newer Claude 4.5 models (Sonnet 4.5, Opus 4.5) default to more concise communication:
 - More direct and grounded responses
@@ -746,8 +746,8 @@ function validateUser(user: User) {
 ### @explain
 Mark complex sections requiring detailed inline comments
 
-### @optimize
-Highlight performance-critical code requiring optimization notes
+### @optimise
+Highlight performance-critical code requiring optimisation notes
 ```
 
 ### Requesting Specific Comment Density
@@ -770,7 +770,7 @@ Generate comprehensive documentation comments but minimal inline comments.
 ## Documentation Generation
 
 When generating documentation:
-1. Analyze existing comment density in the file
+1. Analyse existing comment density in the file
 2. Match that density for consistency
 3. If file has no comments, use Standard density
 4. Focus on interface/public API documentation
@@ -787,7 +787,7 @@ Documentation should answer:
 
 ### Project Structure Templates
 
-Define your expected file organization:
+Define your expected file organisation:
 
 ```markdown
 ## Project Structure
@@ -979,13 +979,13 @@ The bug is caused by [complete]
 ### Eliminating Preambles
 
 **Instead of getting:**
-> "I'd be happy to help you with that! Let me analyze the code and provide you with a comprehensive solution..."
+> "I'd be happy to help you with that! Let me analyse the code and provide you with a comprehensive solution..."
 
 **Request:**
 ```
 No preamble. Direct answer only.
 
-Skip acknowledgment, just show the fix.
+Skip acknowledgement, just show the fix.
 
 Code first, explanation after.
 ```
@@ -1093,7 +1093,7 @@ The most powerful approach combines multiple control mechanisms:
 # CLAUDE.md
 
 ## Response Style (GLOBAL RULE)
-- Skip preambles and acknowledgments
+- Skip preambles and acknowledgements
 - Code-first approach: implementation before explanation
 - Maximum 3 sentences explanation unless complex
 - Use bullet points over paragraphs
@@ -1137,7 +1137,7 @@ Create hooks that automatically format code after Claude modifies files:
 
 **Advantages:**
 - Formatting happens outside Claude's context
-- Deterministic behavior (no AI variation)
+- Deterministic behaviour (no AI variation)
 - Enforces standards regardless of prompt quality
 - Saves context window space
 
@@ -1257,12 +1257,12 @@ With these techniques, you can shape Claude Code's output to match your exact re
 - [Manage Claude's memory - Claude Code Docs](https://code.claude.com/docs/en/memory)
 - [Claude Code: Best practices for agentic coding - Anthropic](https://www.anthropic.com/engineering/claude-code-best-practices)
 - [What is CLAUDE.md in Claude Code - ClaudeLog](https://claudelog.com/faqs/what-is-claude-md/)
-- [Using CLAUDE.MD files: Customizing Claude Code for your codebase](https://claude.com/blog/using-claude-md-files)
+- [Using CLAUDE.MD files: Customising Claude Code for your codebase](https://claude.com/blog/using-claude-md-files)
 - [Prompting best practices - Claude Docs](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-4-best-practices)
 - [12 prompt engineering tips to boost Claude's output quality](https://www.vellum.ai/blog/prompt-engineering-tips-for-claude)
 - [How I use Claude Code (+ my best tips)](https://www.builder.io/blog/claude-code)
 - [Claude Code Output Styles: Explanatory, Learning, and Custom Options](https://williamcallahan.com/blog/claude-code-output-styles-learning-custom-options)
-- [Modular Rules in Claude Code: Organizing Project Instructions](https://claude-blog.setec.rs/blog/claude-code-rules-directory)
+- [Modular Rules in Claude Code: Organising Project Instructions](https://claude-blog.setec.rs/blog/claude-code-rules-directory)
 - [Comment Directives for Claude Code](https://giuseppegurgone.com/comment-directives-claude-code)
 - [What is --output-format in Claude Code - ClaudeLog](https://claudelog.com/faqs/what-is-output-format-in-claude-code/)
 - [New Claude Models Default to Full Code Output](https://eval.16x.engineer/blog/claude-4-models-full-code-output)

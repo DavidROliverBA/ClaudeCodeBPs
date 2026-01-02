@@ -4,7 +4,7 @@
 1. [Introduction to Subagents](#introduction-to-subagents)
 2. [When to Use Subagents](#when-to-use-subagents)
 3. [Configuring Subagents](#configuring-subagents)
-4. [Specialized Agent Roles](#specialized-agent-roles)
+4. [Specialised Agent Roles](#specialised-agent-roles)
 5. [Defining Agent Responsibilities](#defining-agent-responsibilities)
 6. [Agent Communication and Handoffs](#agent-communication-and-handoffs)
 7. [Parallel Agent Execution](#parallel-agent-execution)
@@ -16,12 +16,12 @@
 
 ## Introduction to Subagents
 
-**Subagents** are specialized AI assistants in Claude Code that can be delegated specific tasks. Unlike the main Claude instance that handles general development work, each subagent operates with its own isolated context window, custom system prompt, and tailored tool permissions. This architecture enables more efficient problem-solving by dividing complex workflows into focused, domain-specific tasks.
+**Subagents** are specialised AI assistants in Claude Code that can be delegated specific tasks. Unlike the main Claude instance that handles general development work, each subagent operates with its own isolated context window, custom system prompt, and tailored tool permissions. This architecture enables more efficient problem-solving by dividing complex workflows into focused, domain-specific tasks.
 
 ### Key Benefits
 
 - **Context Preservation**: Each subagent maintains a separate 200k token context window, preventing pollution of the main conversation and avoiding the quality degradation that occurs when a single agent juggles multiple complex tasks
-- **Specialized Expertise**: Subagents are fine-tuned for specific domains with custom instructions, achieving higher success rates on specialized tasks
+- **Specialised Expertise**: Subagents are fine-tuned for specific domains with custom instructions, achieving higher success rates on specialised tasks
 - **Reusability**: Agent configurations can be shared across projects and teams through version control
 - **Flexible Permissions**: Different tool access levels per subagent enhance security and focus
 - **Parallel Execution**: Independent subagents can work simultaneously on different aspects of a project
@@ -100,7 +100,7 @@ Use the `/agents` command within Claude Code for interactive management:
 
 ---
 
-## Specialized Agent Roles
+## Specialised Agent Roles
 
 ### The Core Development Trio
 
@@ -113,7 +113,7 @@ tools: Read, Grep, Glob
 model: sonnet
 ---
 
-You are a Senior Product Manager specializing in requirement analysis and specification writing.
+You are a Senior Product Manager specialising in requirement analysis and specification writing.
 
 Your responsibilities:
 - Read enhancement requests and existing documentation
@@ -165,7 +165,7 @@ tools: Read, Write, Edit, Bash, Glob, Grep
 model: sonnet
 ---
 
-You are a Senior Software Engineer specializing in clean, tested, production-ready code.
+You are a Senior Software Engineer specialising in clean, tested, production-ready code.
 
 Your responsibilities:
 - Implement features according to specs and architectural decisions
@@ -222,15 +222,15 @@ tools: Read, Write, Edit, Bash, Glob, Grep
 model: sonnet
 ---
 
-You are a QA automation engineer specializing in comprehensive testing strategies.
+You are a QA automation engineer specialising in comprehensive testing strategies.
 
 Your responsibilities:
 - Design test plans covering happy paths and edge cases
 - Write unit, integration, and end-to-end tests
 - Create test fixtures and mocks
 - Verify test coverage metrics
-- Execute test suites and analyze failures
-- Document test scenarios and expected behaviors
+- Execute test suites and analyse failures
+- Document test scenarios and expected behaviours
 
 Focus areas:
 - Boundary conditions and edge cases
@@ -252,7 +252,7 @@ model: sonnet
 You are a Security Engineer conducting security audits.
 
 Audit scope:
-- Authentication and authorization flaws
+- Authentication and authorisation flaws
 - Input validation and injection vulnerabilities
 - Sensitive data exposure
 - Security misconfigurations
@@ -277,7 +277,7 @@ tools: Read, Write, Edit, Bash, Glob, Grep
 model: sonnet
 ---
 
-You are a Senior DevOps Engineer specializing in cloud infrastructure and deployment automation.
+You are a Senior DevOps Engineer specialising in cloud infrastructure and deployment automation.
 
 Your expertise:
 - CI/CD pipeline configuration
@@ -291,7 +291,7 @@ Always:
 - Follow infrastructure best practices
 - Implement proper monitoring and alerting
 - Document runbooks for operations
-- Consider cost optimization
+- Consider cost optimisation
 - Plan rollback strategies
 ```
 
@@ -437,7 +437,7 @@ Save this to `.claude/state/handoff-{timestamp}.md` and provide a brief verbal s
 
 ## Parallel Agent Execution
 
-### Why Parallelize?
+### Why Parallelise?
 
 Traditional AI coding tools force serial execution—one task at a time. Claude Code enables true parallelism through:
 - **Git worktrees**: Multiple working directories from the same repository
@@ -503,7 +503,7 @@ Execute these tasks in parallel using subagents:
 
 #### 1. Identify Truly Independent Tasks
 ```markdown
-# Good candidates for parallelization:
+# Good candidates for parallelisation:
 - Backend API + Frontend UI (different files, minimal conflicts)
 - Multiple microservices in monorepo
 - Documentation + Implementation (different artifact types)
@@ -517,7 +517,7 @@ Execute these tasks in parallel using subagents:
 
 #### 2. Plan for Merge Conflicts
 ```markdown
-When parallelizing:
+When parallelising:
 - Assign different files/modules to each agent
 - Use feature branches with clear boundaries
 - Designate one agent as "integration engineer" for final merge
@@ -548,7 +548,7 @@ Each subagent maintains its own 200k token context window, which means:
 Start with a clear role statement:
 
 ```markdown
-You are a [SENIORITY LEVEL] [ROLE] specializing in [SPECIALIZATION].
+You are a [SENIORITY LEVEL] [ROLE] specialising in [SPECIALIZATION].
 
 You have deep expertise in:
 - [Technology/Domain 1]
@@ -576,13 +576,13 @@ You should:
 ```
 
 #### 3. Decision-Making Framework
-Guide the agent's judgment:
+Guide the agent's judgement:
 
 ```markdown
 When making decisions:
 1. Prefer simple solutions over complex ones
 2. Choose boring, proven technology over exciting new options
-3. Optimize for readability and maintainability
+3. Optimise for readability and maintainability
 4. Consider operational complexity
 5. Document trade-offs in comments or ADRs
 
@@ -646,16 +646,16 @@ Your context is valuable—use it wisely.
 
 ## Best Practices for Multi-Agent Workflows
 
-### 1. Start with Claude-Generated Agents, Then Customize
+### 1. Start with Claude-Generated Agents, Then Customise
 
 Don't write agent configurations from scratch. Instead:
 
 ```markdown
 # Prompt to main Claude:
-"Create a subagent configuration for a Senior Database Architect who specializes in PostgreSQL schema design, query optimization, and migration strategies. This agent should work after the system architect has defined the data model and should produce migration scripts and indexing strategies."
+"Create a subagent configuration for a Senior Database Architect who specialises in PostgreSQL schema design, query optimisation, and migration strategies. This agent should work after the system architect has defined the data model and should produce migration scripts and indexing strategies."
 
 # Claude generates a good starting point
-# Then customize based on your specific needs and learnings
+# Then customise based on your specific needs and learnings
 ```
 
 ### 2. Version Control Your Agents
@@ -897,9 +897,9 @@ Analysis Agent -----------├→ Module B Refactorer ---→ Integration Tester
 **Use case**: Debugging and fixing production issues
 
 ```
-                        ┌→ Log Analyzer
+                        ┌→ Log Analyser
 Triage Agent -----------├→ Code Auditor  ------→ Root Cause Analyst → Fixer → Verifier
-                        └→ Metrics Analyzer
+                        └→ Metrics Analyser
 ```
 
 **Configuration**:
@@ -932,9 +932,9 @@ Before starting, detect the framework:
 Your expertise adapts based on the detected stack.
 ```
 
-### Agent Metrics and Optimization
+### Agent Metrics and Optimisation
 
-Track performance to optimize your agent system:
+Track performance to optimise your agent system:
 
 ```markdown
 Metrics to monitor:
@@ -944,7 +944,7 @@ Metrics to monitor:
 - Time to completion
 - Human intervention rate (how often do humans need to step in?)
 
-Optimization strategies:
+Optimisation strategies:
 - Consolidate rarely-used agents
 - Split frequently-failing agents into smaller, focused agents
 - Upgrade frequently-used agents to better models
@@ -954,12 +954,12 @@ Optimization strategies:
 
 ### Multi-Repository Orchestration
 
-For organizations with many repositories:
+For organisations with many repositories:
 
 ```markdown
 Central orchestrator pattern:
 1. Meta-orchestrator agent receives high-level goal
-2. Analyzes which repositories are affected
+2. Analyses which repositories are affected
 3. Spawns repository-specific agents in each codebase
 4. Collects results and verifies cross-repo compatibility
 5. Creates coordinated PRs across repositories
@@ -975,7 +975,7 @@ Example: "Update authentication library to v2.0 across all services"
 
 ## Conclusion
 
-Claude Code subagents represent a powerful paradigm shift in AI-assisted development. By enabling specialization, parallel execution, and context isolation, subagents transform Claude from a single assistant into a coordinated team of experts.
+Claude Code subagents represent a powerful paradigm shift in AI-assisted development. By enabling specialisation, parallel execution, and context isolation, subagents transform Claude from a single assistant into a coordinated team of experts.
 
 **Key Takeaways**:
 
@@ -1000,16 +1000,16 @@ As the Claude Code ecosystem evolves, subagent capabilities will continue to exp
 - [Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
 
 ### Community Resources
-- [How to Use Claude Code Subagents to Parallelize Development](https://zachwills.net/how-to-use-claude-code-subagents-to-parallelize-development/)
+- [How to Use Claude Code Subagents to Parallelise Development](https://zachwills.net/how-to-use-claude-code-subagents-to-parallelise-development/)
 - [Best practices for Claude Code subagents - PubNub](https://www.pubnub.com/blog/best-practices-for-claude-code-sub-agents/)
-- [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) - 100+ specialized agents
+- [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) - 100+ specialised agents
 - [wshobson/agents](https://github.com/wshobson/agents) - Intelligent automation and multi-agent orchestration
 - [zhsama/claude-sub-agent](https://github.com/zhsama/claude-sub-agent) - AI-driven development workflow system
 - [How I'm Using Claude Code Parallel Agents to Blow Up My Workflows](https://medium.com/@joe.njenga/how-im-using-claude-code-parallel-agents-to-blow-up-my-workflows-460676bf38e8)
 - [Embracing the parallel coding agent lifestyle](https://simonwillison.net/2025/Oct/5/parallel-coding-agents/)
 
 ### Tools and Infrastructure
-- [How to run Claude Code in parallel - Ona](https://ona.com/stories/parallelize-claude-code)
+- [How to run Claude Code in parallel - Ona](https://ona.com/stories/parallelise-claude-code)
 - [Multi-Agent Orchestration: Running 10+ Claude Instances in Parallel](https://dev.to/bredmond1019/multi-agent-orchestration-running-10-claude-instances-in-parallel-part-3-29da)
 
 ---

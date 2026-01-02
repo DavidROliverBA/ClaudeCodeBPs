@@ -18,7 +18,7 @@
 
 Context management is one of the most critical skills for effective use of Claude Code. The context window—the information Claude uses to understand your project and generate responses—has finite limits. How you manage this limited resource directly impacts code quality, session continuity, and overall productivity during extended development sessions.
 
-This guide provides comprehensive strategies for optimizing context usage, maintaining state across sessions, and enabling autonomous operation without hitting context limits or experiencing performance degradation.
+This guide provides comprehensive strategies for optimising context usage, maintaining state across sessions, and enabling autonomous operation without hitting context limits or experiencing performance degradation.
 
 ---
 
@@ -26,24 +26,24 @@ This guide provides comprehensive strategies for optimizing context usage, maint
 
 ### What is Compaction?
 
-Compaction is Claude Code's intelligent context window management system that automatically summarizes conversations when approaching memory limits. Rather than failing when the context window fills, Claude creates a condensed summary of the conversation history and starts fresh with that summary preloaded.
+Compaction is Claude Code's intelligent context window management system that automatically summarises conversations when approaching memory limits. Rather than failing when the context window fills, Claude creates a condensed summary of the conversation history and starts fresh with that summary preloaded.
 
 ### How Compaction Works
 
 When compaction triggers, Claude Code:
-1. Analyzes the entire conversation history
+1. Analyses the entire conversation history
 2. Creates a summary containing essential information
 3. Clears the original conversation messages
 4. Loads the summary as the new starting context
 5. Continues operation with reduced token usage
 
-This process allows extended sessions to continue without interruption, though some detail and nuance from earlier conversations may be lost in the summarization.
+This process allows extended sessions to continue without interruption, though some detail and nuance from earlier conversations may be lost in the summarisation.
 
 ### Types of Compaction
 
-**Auto-Compaction**: Triggered automatically when the context window reaches approximately 95% capacity (or 25% remaining). The system decides what to summarize based on internal heuristics.
+**Auto-Compaction**: Triggered automatically when the context window reaches approximately 95% capacity (or 25% remaining). The system decides what to summarise based on internal heuristics.
 
-**Manual Compaction**: Initiated by the `/compact` command, giving you control over when summarization occurs. You can provide specific instructions about what to preserve or how to structure the summary.
+**Manual Compaction**: Initiated by the `/compact` command, giving you control over when summarisation occurs. You can provide specific instructions about what to preserve or how to structure the summary.
 
 ### Context Editing Strategies
 
@@ -78,7 +78,7 @@ A critical insight from recent research: **the context window is not just storag
 
 ### The 75% Rule
 
-Recent observations indicate Claude Code triggers compaction around **75% utilization** rather than the historical 90%+. With a 200k token window, this means:
+Recent observations indicate Claude Code triggers compaction around **75% utilisation** rather than the historical 90%+. With a 200k token window, this means:
 - Compaction triggers at ~150k tokens
 - Leaves 50k tokens (25%) for reasoning and working memory
 - Prevents mid-operation interruptions and context corruption
@@ -92,7 +92,7 @@ Your context window fills with:
 2. **File contents**: Every file Claude reads or edits
 3. **Tool outputs**: Results from bash commands, searches, and other operations
 4. **CLAUDE.md**: Project configuration automatically loaded each session
-5. **System prompts**: Hidden instructions that configure Claude's behavior
+5. **System prompts**: Hidden instructions that configure Claude's behaviour
 6. **Thinking blocks**: Extended reasoning when using "think" commands
 
 ---
@@ -102,7 +102,7 @@ Your context window fills with:
 ### Automatic Triggers
 
 Auto-compaction activates when:
-- Context utilization reaches approximately **75-95%** (varies by configuration)
+- Context utilisation reaches approximately **75-95%** (varies by configuration)
 - Token count approaches the model's maximum window size
 - The system detects insufficient working memory for quality responses
 
@@ -128,9 +128,9 @@ This can cause Claude to lose essential task state, leading to the dreaded "infi
 3. Claude re-reads files to "recover" context
 4. The cycle repeats indefinitely
 
-### Best Practice: Proactive Manual Compaction
+### Best Practise: Proactive Manual Compaction
 
-**Don't wait for auto-compact.** When you've finished a feature, fixed a bug, or reached a logical deployment point, run `/compact` yourself. This ensures summarization happens when context is clean and coherent, not mid-operation.
+**Don't wait for auto-compact.** When you've finished a feature, fixed a bug, or reached a logical deployment point, run `/compact` yourself. This ensures summarisation happens when context is clean and coherent, not mid-operation.
 
 ---
 
@@ -207,7 +207,7 @@ The memory tool enables Claude to store information outside the context window t
 Use cases:
 - Architectural decisions that should influence all future work
 - Bug patterns discovered during debugging
-- Performance optimization notes
+- Performance optimisation notes
 - Dependency relationships and constraints
 
 ### Pre-Compaction Workflow
@@ -244,7 +244,7 @@ Benefits:
 
 #### 2. **YOLO Mode for Trusted Environments**
 
-For containerized or isolated environments, skip permission prompts entirely:
+For containerised or isolated environments, skip permission prompts entirely:
 
 ```bash
 claude --dangerously-skip-permissions
@@ -286,7 +286,7 @@ CLAUDE.md instructions are treated as **immutable system rules**, while user pro
 2. **Autonomous Implementation**: Claude works independently in secure container
 3. **Review**: Inspect completed pull request
 
-This three-step process maximizes productivity while maintaining quality control.
+This three-step process maximises productivity while maintaining quality control.
 
 #### Parallel Instance Strategy
 
@@ -357,7 +357,7 @@ Subagents operate in separate context windows, preventing pollution of the main 
 Subagents can be resumed to continue previous conversations, particularly useful for:
 - Long-running research that spans multiple sessions
 - Complex analysis requiring incremental refinement
-- Building specialized knowledge bases for specific domains
+- Building specialised knowledge bases for specific domains
 
 #### Subagent Strategy
 
@@ -374,7 +374,7 @@ Then report back with findings so we can plan our approach."
 
 ### The CLAUDE.md Supremacy Pattern
 
-Rather than creating specialized subagents, use CLAUDE.md to provide consistent context:
+Rather than creating specialised subagents, use CLAUDE.md to provide consistent context:
 
 > "Put all key context in the CLAUDE.md. Then, let the main agent decide when and how to delegate work to copies of itself. This gives all the context-saving benefits of subagents without the drawbacks."
 
@@ -487,7 +487,7 @@ Large repositories (20,000+ lines) often produce inferior results including rein
 
 Research consistently shows performance degradation as models approach context limits. **Avoid using the last 20% of the context window for anything touching multiple parts of your codebase.**
 
-If approaching 80% context utilization:
+If approaching 80% context utilisation:
 1. Complete current focused task
 2. Commit the work
 3. `/compact` or `/clear` to free space
@@ -497,7 +497,7 @@ If approaching 80% context utilization:
 
 ## Best Practices for Context Efficiency
 
-### 1. **Optimize CLAUDE.md Content**
+### 1. **Optimise CLAUDE.md Content**
 
 Include only essential, stable information:
 
@@ -554,14 +554,14 @@ Avoid compacting when:
 Provide specific guidance for `/compact`:
 
 ```bash
-/compact "Preserve: the authentication refactor plan, all discovered bugs, and testing notes. Summarize: the earlier discussion about database options."
+/compact "Preserve: the authentication refactor plan, all discovered bugs, and testing notes. Summarise: the earlier discussion about database options."
 ```
 
-This ensures critical information survives summarization.
+This ensures critical information survives summarisation.
 
 ### 6. **Leverage Tool Result Clearing**
 
-Modern context editing automatically clears stale tool results. To optimize:
+Modern context editing automatically clears stale tool results. To optimise:
 - Batch related file reads together
 - Complete tool-heavy operations before switching contexts
 - Trust that completed tool outputs can be safely discarded
@@ -640,7 +640,7 @@ This is often faster than trying to salvage an overwhelmed session through compa
 
 ```markdown
 ## Planning Session
-1. Analyze scope of migration
+1. Analyse scope of migration
 2. Generate comprehensive checklist
 3. Save to MIGRATION_CHECKLIST.md
 4. Commit initial plan
@@ -697,7 +697,7 @@ git worktree remove ../project-tests
 4. **Quality over quantity**: Focused, relevant context outperforms comprehensive information dumps
 5. **Clear frequently**: `/clear` between unrelated tasks maintains focus and performance
 6. **Subagents preserve main context**: Use for research and verification without pollution
-7. **Trust auto-optimization**: Context editing and tool result clearing work automatically
+7. **Trust auto-optimisation**: Context editing and tool result clearing work automatically
 8. **Plan for limits**: Break large tasks into phases that fit within context windows
 9. **CLAUDE.md is supreme**: Central configuration ensures consistency across sessions and instances
 10. **Persistence enables autonomy**: Proper state management allows Claude to work independently for extended periods

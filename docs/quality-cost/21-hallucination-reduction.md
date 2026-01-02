@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Hallucination in AI code generation—where models generate plausible but incorrect code, non-existent APIs, or fabricated references—represents one of the most critical challenges in automated software development. Research shows that hallucinations affect up to 44% of failed code completion tasks and 16.4% of generated tests. This guide provides evidence-based strategies for minimizing hallucinations when using Claude Code, grounded in Anthropic's official best practices, peer-reviewed research, and industry standards.
+Hallucination in AI code generation—where models generate plausible but incorrect code, non-existent APIs, or fabricated references—represents one of the most critical challenges in automated software development. Research shows that hallucinations affect up to 44% of failed code completion tasks and 16.4% of generated tests. This guide provides evidence-based strategies for minimising hallucinations when using Claude Code, grounded in Anthropic's official best practices, peer-reviewed research, and industry standards.
 
 ---
 
@@ -75,7 +75,7 @@ and report back with patterns it finds.
 
 ## 2. Verification Strategies
 
-Verification acts as a critical checkpoint between code generation and execution. Multiple complementary strategies create defense-in-depth against hallucinations.
+Verification acts as a critical checkpoint between code generation and execution. Multiple complementary strategies create defence-in-depth against hallucinations.
 
 ### Test-Driven Development (TDD) as Verification
 
@@ -83,11 +83,11 @@ TDD becomes extraordinarily powerful with Claude Code because tests provide obje
 
 > **"Claude performs best when it has a clear target to iterate against—a visual mock, a test case, or another kind of output."**
 
-**Best practice workflow:**
+**Best practise workflow:**
 1. Write tests first describing the desired functionality
 2. Be explicit: "We are doing TDD. Write the tests for a function that does X. These tests should fail initially."
 3. Have Claude implement to make tests pass
-4. Tests serve as grounding anchors preventing hallucinated behaviors
+4. Tests serve as grounding anchors preventing hallucinated behaviours
 
 ### Best-of-N Verification
 
@@ -167,7 +167,7 @@ Research from the De-Hallucinator paper (arXiv:2401.01701v3) demonstrates a powe
 
 RAG systems can decrease hallucination rates by 60–80% by grounding responses in verified documents. However, simple document fetching isn't sufficient—Stanford's 2025 legal RAG reliability work found that even well-curated retrieval pipelines can fabricate citations.
 
-**Best practice: Span-level verification**
+**Best practise: Span-level verification**
 Each generated claim must be matched against retrieved evidence:
 
 ```
@@ -180,7 +180,7 @@ For each API or function you generate:
 
 ### Direct Quotation for Factual Grounding
 
-Anthropic's official guidance emphasizes:
+Anthropic's official guidance emphasises:
 
 > **"For tasks involving long documents (>20K tokens), ask Claude to extract word-for-word quotes first before performing its task. This grounds its responses in the actual text, reducing hallucinations."**
 
@@ -192,7 +192,7 @@ functions in auth.py. Quote them verbatim with line numbers.
 Then, using ONLY those quoted signatures, implement the password reset feature.
 ```
 
-### Context Window Utilization
+### Context Window Utilisation
 
 Modern Claude models have extensive context windows—use them:
 
@@ -293,7 +293,7 @@ Before implementing new authentication logic:
 
 When using external libraries, mandate citations:
 
-> **"A developer should ask for citations or API reference wherever possible to minimize hallucinations."**
+> **"A developer should ask for citations or API reference wherever possible to minimise hallucinations."**
 
 **Example prompt:**
 ```
@@ -346,7 +346,7 @@ Agent 3: Compare both implementations and identify:
 
 ## 6. Signs of Hallucination
 
-Recognizing hallucination patterns enables early intervention before errors propagate.
+Recognising hallucination patterns enables early intervention before errors propagate.
 
 ### Common Hallucination Signatures in Code
 
@@ -355,7 +355,7 @@ Microsoft engineer Mithilesh Ramaswamy identifies key indicators:
 1. **Generated code that doesn't compile** - Syntax errors, undefined symbols
 2. **Overly convoluted or inefficient code** - Unnecessarily complex solutions
 3. **Functions or algorithms that contradict themselves** - Internal logical inconsistencies
-4. **Ambiguous behavior** - Code whose purpose or effects are unclear
+4. **Ambiguous behaviour** - Code whose purpose or effects are unclear
 
 ### API-Specific Hallucinations
 
@@ -378,14 +378,14 @@ For each external API call:
 
 ### Documentation Mismatches
 
-> **"Generated code may reference documentation, but the described behavior doesn't match what the code does."**
+> **"Generated code may reference documentation, but the described behaviour doesn't match what the code does."**
 
 **Verification:**
 ```
 After Claude generates code with documentation:
 1. Read the generated docstring
 2. Trace through the code logic
-3. Verify claimed behavior matches actual implementation
+3. Verify claimed behaviour matches actual implementation
 4. Check for edge cases not mentioned in docs
 ```
 
@@ -394,7 +394,7 @@ After Claude generates code with documentation:
 Research shows **60% of hallucinated packages reappear at least once in 10 subsequent prompts**, indicating systematic rather than random hallucination.
 
 **High-risk scenarios:**
-- Niche or specialized libraries
+- Niche or specialised libraries
 - Recently updated packages (training data lag)
 - Cross-language dependencies
 - Platform-specific modules
@@ -426,7 +426,7 @@ Explain this discrepancy. Which is correct?
 
 ### Confidence Score Analysis
 
-> **"Many AI systems assign internal scores to each word they generate. By analyzing these likelihood scores, organizations can apply filters or thresholds to identify low-confidence responses that may be more prone to hallucination."**
+> **"Many AI systems assign internal scores to each word they generate. By analysing these likelihood scores, organisations can apply filters or thresholds to identify low-confidence responses that may be more prone to hallucination."**
 
 While not directly exposed in Claude Code, you can proxy confidence through:
 - Request multiple generations and measure variance
@@ -436,7 +436,7 @@ While not directly exposed in Claude Code, you can proxy confidence through:
 
 ## 7. Recovery from Incorrect Assumptions
 
-When hallucinations occur, structured recovery minimizes damage and restores grounding.
+When hallucinations occur, structured recovery minimises damage and restores grounding.
 
 ### Immediate Error Feedback Loop
 
@@ -463,7 +463,7 @@ Please:
 
 ### Course Correction with Context Preservation
 
-Anthropic's guidance emphasizes real-time intervention:
+Anthropic's guidance emphasises real-time intervention:
 
 > **"Press Escape to interrupt Claude during any phase (thinking, tool calls, file edits), preserving context so you can redirect or expand instructions."**
 
@@ -565,7 +565,7 @@ Requirements:
 
 ### Permission to Express Uncertainty
 
-Anthropic's guidance emphasizes allowing Claude to admit knowledge gaps:
+Anthropic's guidance emphasises allowing Claude to admit knowledge gaps:
 
 > **"Explicitly give Claude permission to admit uncertainty. This simple technique can drastically reduce false information."**
 
@@ -584,7 +584,7 @@ It is ALWAYS better to admit uncertainty than to hallucinate plausible-sounding 
 > **"Claude's hallucinations can sometimes be solved by lowering the temperature of responses. Temperature is a measurement of answer creativity between 0 and 1."**
 
 **Recommended settings:**
-- **Temperature 0-0.3**: Code generation, API calls, factual tasks (minimize hallucination)
+- **Temperature 0-0.3**: Code generation, API calls, factual tasks (minimise hallucination)
 - **Temperature 0.4-0.7**: Architecture decisions, creative problem-solving
 - **Temperature 0.8-1.0**: Brainstorming, exploratory ideation (expect more hallucination)
 
@@ -623,7 +623,7 @@ This file is automatically added to context, providing grounding for every sessi
 ```bash
 # After Claude generates code
 npm run lint     # Catch syntax issues
-npm test         # Verify behavior
+npm test         # Verify behaviour
 npm run build    # Ensure compilation
 npm run security-scan  # Check for vulnerabilities
 ```

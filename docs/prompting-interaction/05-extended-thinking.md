@@ -33,7 +33,7 @@ Triggers basic extended thinking mode, giving Claude additional computation time
 Provides approximately 10,000 tokens of thinking budget. This level is recommended for:
 - API design decisions
 - Database schema planning
-- Performance optimization
+- Performance optimisation
 - Complex refactoring across multiple files
 
 #### Advanced Level: "think harder"
@@ -72,10 +72,10 @@ Claude Code provides a convenient keyboard shortcut to toggle thinking mode on a
 
 Claude Code displays clear visual indicators for:
 - Current thinking mode status (on/off)
-- Current thinking budget being utilized
+- Current thinking budget being utilised
 - A "Thinking" indicator with timer when processing
 
-When you use thinking trigger words like "ultrathink" in your prompts, Claude Code automatically indicates that maximum thinking budget is being utilized.
+When you use thinking trigger words like "ultrathink" in your prompts, Claude Code automatically indicates that maximum thinking budget is being utilised.
 
 ### Known Issues
 
@@ -85,7 +85,7 @@ When you use thinking trigger words like "ultrathink" in your prompts, Claude Co
 
 ## MAX_THINKING_TOKENS Configuration
 
-The `MAX_THINKING_TOKENS` environment variable provides fine-grained control over extended thinking behavior across all Claude Code requests.
+The `MAX_THINKING_TOKENS` environment variable provides fine-grained control over extended thinking behaviour across all Claude Code requests.
 
 ### What It Does
 
@@ -143,7 +143,7 @@ You can also configure thinking mode in `~/.claude/settings.json`:
 
 Use the `/config` command to verify your settings and see "Thinking Mode: True" status.
 
-### Important Behavior Notes
+### Important Behaviour Notes
 
 - When `MAX_THINKING_TOKENS` is set, it takes priority and controls the thinking budget for all requests
 - Keyword triggers like "ultrathink" only work when `MAX_THINKING_TOKENS` is NOT set
@@ -178,7 +178,7 @@ Extended thinking enhances Claude's ability to:
 
 **Instruction Following:**
 - Better adherence to complex requirements
-- More consistent behavior across multi-turn conversations
+- More consistent behaviour across multi-turn conversations
 - Improved tool use reliability
 
 ### Quality vs. Budget Relationship
@@ -186,7 +186,7 @@ Extended thinking enhances Claude's ability to:
 The model's performance can vary significantly at different thinking budget settings:
 
 - **1,024 tokens (minimum):** Suitable for moderately complex tasks
-- **10,000 tokens:** Good for API design, database planning, performance optimization
+- **10,000 tokens:** Good for API design, database planning, performance optimisation
 - **16,000+ tokens:** Recommended starting point for complex architectural tasks
 - **32,000 tokens (maximum recommended):** System architecture redesigns, critical debugging
 
@@ -210,7 +210,7 @@ Extended thinking adds processing time before Claude begins generating visible r
 - **Complex queries:** Can extend to 156+ seconds for highly complex reasoning tasks
 - **Network factors:** Thinking budgets above 32K tokens can cause long-running requests that hit system timeouts and connection limits
 
-**Best practice:** For live settings (pair programming, live chat support), limit thinking mode to critical segments to avoid excessive latency.
+**Best practise:** For live settings (pair programming, live chat support), limit thinking mode to critical segments to avoid excessive latency.
 
 ### Cost Implications
 
@@ -221,7 +221,7 @@ Extended thinking adds processing time before Claude begins generating visible r
 - Intermediate thinking: ~$0.15-$0.25
 - Ultrathink: ~$0.48
 
-**Cost optimization strategies:**
+**Cost optimisation strategies:**
 - Start with the minimum thinking budget (1,024 tokens) and increase incrementally
 - Reserve ultrathink for tasks where correctness outweighs token costs
 - Toggle thinking off for simple, routine queries
@@ -247,7 +247,7 @@ Extended thinking is particularly valuable during the planning phase:
 1. **Explore:** Ask Claude to research and understand the problem space
 2. **Plan:** Use "think" or "think harder" to request a detailed approach
 3. **Code:** Implement the solution with standard thinking or thinking off
-4. **Commit:** Review and finalize
+4. **Commit:** Review and finalise
 
 Steps 1-2 are crucial—without them, Claude tends to jump straight to coding a solution. Asking Claude to research and plan first with extended thinking significantly improves performance for problems requiring deeper thinking upfront.
 
@@ -259,7 +259,7 @@ Claude often performs better with high-level instructions to "think deeply about
 **Example:**
 ```
 Good: "think harder about the best architecture for this microservices system"
-Less effective: "first analyze X, then consider Y, then evaluate Z..."
+Less effective: "first analyse X, then consider Y, then evaluate Z..."
 ```
 
 **Constraint-rich prompts:**
@@ -294,7 +294,7 @@ Then I'll identify potential security vulnerabilities...
 Finally I'll propose improvements with minimal breaking changes...
 </thinking>
 
-Now apply this reasoning approach to analyze our payment processing system.
+Now apply this reasoning approach to analyse our payment processing system.
 ```
 
 ### For Large Outputs
@@ -349,14 +349,14 @@ Understanding when to disable extended thinking is as important as knowing when 
 
 ### The Selective Approach
 
-**Best practice:** Remain in default mode during exploration and only enable extended thinking for the "hard parts":
+**Best practise:** Remain in default mode during exploration and only enable extended thinking for the "hard parts":
 - Critical migration scripts
 - Complex architectural decisions
-- Performance optimization analysis
+- Performance optimisation analysis
 - Multi-system integration design
 - Security-critical implementations
 
-This selective approach optimizes for both speed and accuracy while minimizing unnecessary costs.
+This selective approach optimises for both speed and accuracy while minimising unnecessary costs.
 
 ## Advanced Configuration and API Usage
 
@@ -398,7 +398,7 @@ With interleaved thinking, `budget_tokens` can exceed `max_tokens`, as it repres
 | Low | 1,024 tokens | Moderate problem-solving, basic planning |
 | Medium | 5,000-10,000 tokens | API design, database schema, multi-file refactoring |
 | High | 16,000+ tokens | System architecture, complex algorithms |
-| Critical | 32,000 tokens | Major migrations, security reviews, performance optimization |
+| Critical | 32,000 tokens | Major migrations, security reviews, performance optimisation |
 
 **For budgets above 32K:** Use batch processing to avoid networking issues, timeouts, and connection limits.
 
@@ -421,7 +421,7 @@ It's important to understand the distinction between Extended Thinking and Claud
 - Allows Claude to pause mid-response to gather more information
 - Less comprehensive than extended thinking
 - More focused on new information the model discovers during execution
-- Useful for realizing mid-task that more context is needed
+- Useful for realising mid-task that more context is needed
 
 **Recommendation:** Use extended thinking for simpler tool use scenarios like non-sequential tool calls or straightforward instruction following. Use the "think" tool when Claude might need to dynamically adjust its approach based on intermediate results.
 
@@ -465,7 +465,7 @@ WebSocket and SSE protocols, and maintain message delivery guarantees. Consider
 scalability, cost, operational complexity, and failure modes."
 
 Result: Claude will use ~32K thinking tokens to thoroughly evaluate architectures
-(WebSocket servers, message queues, database polling, event sourcing), analyze
+(WebSocket servers, message queues, database polling, event sourcing), analyse
 tradeoffs, and recommend an approach with detailed justification.
 ```
 
@@ -477,7 +477,7 @@ failing for about 2% of requests. The logs show token validation passes, but use
 still get 401 errors. Race condition? Distributed cache issue? Network timing?"
 
 Result: Claude will methodically reason through potential causes, examining timing
-windows, distributed system behaviors, and edge cases that might explain the
+windows, distributed system behaviours, and edge cases that might explain the
 intermittent failures.
 ```
 
@@ -503,7 +503,7 @@ Extended thinking would add latency and cost without improving quality.
 | System architecture | ✅ Yes | ultrathink |
 | Adding comments | ❌ No | N/A |
 | Multi-file refactoring | ✅ Yes | think hard |
-| Performance optimization | ✅ Yes | think harder |
+| Performance optimisation | ✅ Yes | think harder |
 | Simple variable rename | ❌ No | N/A |
 | Security review | ✅ Yes | ultrathink |
 | Live pair programming | ⚠️ Selective | think (for critical decisions) |
@@ -550,7 +550,7 @@ This guide was compiled from the following authoritative sources:
 - [Claude Code: Best practices for agentic coding - Anthropic Engineering](https://www.anthropic.com/engineering/claude-code-best-practices)
 - [Extended thinking - Amazon Bedrock Documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/claude-messages-extended-thinking.html)
 - [Extended thinking tips - Claude Docs](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/extended-thinking-tips)
-- [Using extended thinking - Claude Help Center](https://support.claude.com/en/articles/10574485-using-extended-thinking)
+- [Using extended thinking - Claude Help Centre](https://support.claude.com/en/articles/10574485-using-extended-thinking)
 - [The ultrathink mystery: does Claude really think harder? - ITECS Blog](https://itecsonline.com/post/the-ultrathink-mystery-does-claude-really-think-harder)
 - [Claude Code Thinking Levels: From Think to Ultra-Think - Goat Review](https://goatreview.com/claude-code-thinking-levels-think-ultrathink/)
 - [What is UltraThink in Claude Code - ClaudeLog](https://claudelog.com/faqs/what-is-ultrathink/)

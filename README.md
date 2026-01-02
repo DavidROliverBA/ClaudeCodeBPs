@@ -35,7 +35,7 @@ A comprehensive collection of best practices, guides, and documentation for usin
 | # | Topic | Description |
 |---|-------|-------------|
 | 12 | [MCP (Model Context Protocol)](docs/advanced-usage/12-mcp-model-context-protocol.md) | Connecting to external services, databases, APIs; configuring .mcp.json |
-| 13 | [Subagents](docs/advanced-usage/13-subagents.md) | Configuring specialized agents (architect, builder, QA, reviewer) with defined responsibilities |
+| 13 | [Subagents](docs/advanced-usage/13-subagents.md) | Configuring specialised agents (architect, builder, QA, reviewer) with defined responsibilities |
 | 14 | [Git Worktrees](docs/advanced-usage/14-git-worktrees.md) | Running parallel Claude instances with isolated code states |
 | 15 | [Session Management](docs/advanced-usage/15-session-management.md) | Using /clear for token efficiency, command history, conversation resumption (-c, -r flags) |
 
@@ -45,10 +45,10 @@ A comprehensive collection of best practices, guides, and documentation for usin
 |---|-------|-------------|
 | 16 | [Test-Driven Development](docs/development-practices/16-test-driven-development.md) | Leveraging Claude for robust test coverage and TDD workflows |
 | 17 | [Prompt Planning](docs/development-practices/17-prompt-planning.md) | Using spec.md and prompt_plan.md files for structured multi-step implementations |
-| 18 | [Code Review Integration](docs/development-practices/18-code-review-integration.md) | Configuring claude-code-review.yml for PR reviews; customizing review focus |
+| 18 | [Code Review Integration](docs/development-practices/18-code-review-integration.md) | Configuring claude-code-review.yml for PR reviews; customising review focus |
 | 19 | [Image and Diagram Analysis](docs/development-practices/19-image-diagram-analysis.md) | Using screenshots and image files for visual context |
 
-### Quality & Cost Optimization
+### Quality & Cost Optimisation
 
 | # | Topic | Description |
 |---|-------|-------------|
@@ -65,7 +65,7 @@ A comprehensive collection of best practices, guides, and documentation for usin
 
 3. **Want to automate workflows?** Check out [Custom Slash Commands](docs/automation-workflows/08-custom-slash-commands.md) and [Hooks](docs/automation-workflows/09-hooks.md)
 
-4. **Optimizing costs?** See [Model Selection](docs/quality-cost/20-model-selection.md) and [Context Management](docs/quality-cost/22-context-management.md)
+4. **Optimising costs?** See [Model Selection](docs/quality-cost/20-model-selection.md) and [Context Management](docs/quality-cost/22-context-management.md)
 
 ## Document Statistics
 
@@ -76,7 +76,7 @@ A comprehensive collection of best practices, guides, and documentation for usin
 | Automation & Workflows | 4 | ~20,000 |
 | Advanced Usage | 4 | ~22,000 |
 | Development Practices | 4 | ~18,000 |
-| Quality & Cost Optimization | 4 | ~16,000 |
+| Quality & Cost Optimisation | 4 | ~16,000 |
 | **Total** | **23** | **~98,000** |
 
 ## Sources

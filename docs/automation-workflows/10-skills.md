@@ -17,13 +17,13 @@
 
 ## Introduction
 
-Agent Skills represent a paradigm shift in how AI assistants handle specialized tasks. Published as an open standard in December 2025, Skills are Anthropic's solution for equipping Claude with domain-specific expertise and repeatable workflows without overwhelming its context window. This guide provides a comprehensive overview of Skills in Claude Code, from basic concepts to advanced implementation strategies.
+Agent Skills represent a paradigm shift in how AI assistants handle specialised tasks. Published as an open standard in December 2025, Skills are Anthropic's solution for equipping Claude with domain-specific expertise and repeatable workflows without overwhelming its context window. This guide provides a comprehensive overview of Skills in Claude Code, from basic concepts to advanced implementation strategies.
 
 ## What Are Skills?
 
-**Skills are folders of instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks.** They teach Claude how to complete specific tasks in a repeatable way, whether that's creating documents with your company's brand guidelines, analyzing data using your organization's specific workflows, or automating personal tasks.
+**Skills are folders of instructions, scripts, and resources that Claude loads dynamically to improve performance on specialised tasks.** They teach Claude how to complete specific tasks in a repeatable way, whether that's creating documents with your company's brand guidelines, analysing data using your organisation's specific workflows, or automating personal tasks.
 
-Unlike traditional approaches that require all context upfront, Skills use **progressive disclosure**: Claude loads only the information it needs, when it needs it. Think of Skills as a well-organized manual with a table of contents, specific chapters, and a detailed appendix—Claude starts with the overview and dives deeper only when necessary.
+Unlike traditional approaches that require all context upfront, Skills use **progressive disclosure**: Claude loads only the information it needs, when it needs it. Think of Skills as a well-organised manual with a table of contents, specific chapters, and a detailed appendix—Claude starts with the overview and dives deeper only when necessary.
 
 ### Core Characteristics
 
@@ -42,7 +42,7 @@ Understanding the distinction between Skills and slash commands is crucial for e
 - **Structure**: Directory-based with SKILL.md plus supporting files (scripts, references, templates)
 - **Complexity**: Can handle rich, multi-step workflows with bundled resources
 - **Discovery**: Auto-discovered from configured skill directories
-- **Use Case**: Auto-applied capabilities that Claude recognizes and uses when relevant
+- **Use Case**: Auto-applied capabilities that Claude recognises and uses when relevant
 
 **Example**: A `test-driven-development` skill automatically activates when implementing features, enforcing RED-GREEN-REFACTOR methodology without explicit user invocation.
 
@@ -68,7 +68,7 @@ my-skill/
 
 ### Standard Structure
 
-The recommended structure uses three specialized directories:
+The recommended structure uses three specialised directories:
 
 ```
 my-skill/
@@ -200,7 +200,7 @@ Generate commit messages following the Conventional Commits specification.
 - test: Test additions/changes
 
 ## Process
-1. Analyze git diff to understand changes
+1. Analyse git diff to understand changes
 2. Determine appropriate type and scope
 3. Write concise subject (max 50 chars)
 4. Add detailed body explaining "why" (not "what")
@@ -365,7 +365,7 @@ The Skill tool embeds an `<available_skills>` section listing all accessible ski
 <available_skills>
 <skill>
 <name>pdf</name>
-<description>Extract and analyze text from PDF documents using embedded scripts</description>
+<description>Extract and analyse text from PDF documents using embedded scripts</description>
 <location>user</location>
 </skill>
 <skill>
@@ -445,7 +445,7 @@ The description field is your most important investment. Claude uses it to decid
 
 **Good descriptions:**
 - ✓ "Generate structured commit messages following Conventional Commits standard with proper scope and breaking change notation"
-- ✓ "Extract text content from PDF files and analyze structure, tables, and formatting"
+- ✓ "Extract text content from PDF files and analyse structure, tables, and formatting"
 - ✓ "Test web applications using Playwright with screenshot capture and accessibility validation"
 
 **Poor descriptions:**
@@ -587,7 +587,7 @@ description: Generate commit messages following team convention (type/scope/subj
 
 **Public skills**: Require comprehensive documentation and error handling
 ```markdown
-description: Extract and analyze PDF documents with support for tables, images, and multi-column layouts. Handles corrupted PDFs gracefully.
+description: Extract and analyse PDF documents with support for tables, images, and multi-column layouts. Handles corrupted PDFs gracefully.
 ```
 
 ## Example Skills for Common Domains
@@ -598,16 +598,16 @@ description: Extract and analyze PDF documents with support for tables, images, 
 ```yaml
 ---
 name: brand-guidelines
-description: Create documents following company brand guidelines including fonts, colors, tone, and visual identity
+description: Create documents following company brand guidelines including fonts, colours, tone, and visual identity
 ---
 ```
 Use for: Marketing materials, presentations, documentation following brand standards
 
-**`d3-visualization`**
+**`d3-visualisation`**
 ```yaml
 ---
-name: d3-visualization
-description: Create interactive D3.js data visualizations with proper axis scaling, legends, and responsive design
+name: d3-visualisation
+description: Create interactive D3.js data visualisations with proper axis scaling, legends, and responsive design
 ---
 ```
 Use for: Charts, graphs, interactive dashboards
@@ -627,7 +627,7 @@ Use for: Any feature or bugfix requiring verifiable tests
 ```yaml
 ---
 name: changelog-generator
-description: Transform git commit history into user-facing release notes with categorized changes and version numbering
+description: Transform git commit history into user-facing release notes with categorised changes and version numbering
 ---
 ```
 Use for: Release preparation, version documentation
@@ -676,7 +676,7 @@ Use for: Customer communication, internal announcements
 ```yaml
 ---
 name: pdf-extractor
-description: Extract and analyze text, tables, and metadata from PDF documents with structure preservation
+description: Extract and analyse text, tables, and metadata from PDF documents with structure preservation
 ---
 ```
 Use for: Document processing, data extraction
@@ -685,12 +685,12 @@ Use for: Document processing, data extraction
 ```yaml
 ---
 name: csv-analysis
-description: Analyze CSV data with statistical summaries, visualizations, and anomaly detection
+description: Analyse CSV data with statistical summaries, visualisations, and anomaly detection
 ---
 ```
 Use for: Data analysis, reporting
 
-### Specialized Workflows
+### Specialised Workflows
 
 **`subagent-driven-development`**
 ```yaml
@@ -812,7 +812,7 @@ Skills execute with your permissions and can:
 
 **Recommended sources:**
 - ✓ Official Anthropic repository (`anthropics/skills`)
-- ✓ Your organization's internal repositories
+- ✓ Your organisation's internal repositories
 - ✓ Well-known open source maintainers with verified repos
 - ✓ Skills you've written yourself
 
@@ -831,7 +831,7 @@ Skills execute with your permissions and can:
 
 **For team use:**
 - Code review skills before merging
-- Document skill purpose and behavior
+- Document skill purpose and behaviour
 - Regular security audits of skill scripts
 - Version control for skill changes
 
@@ -845,7 +845,7 @@ Skills execute with your permissions and can:
 
 ## Conclusion
 
-Skills represent a powerful evolution in AI agent capabilities, enabling Claude to handle specialized tasks with expert-level consistency while maintaining efficient context usage. By following the progressive disclosure principle and best practices outlined in this guide, you can create robust, reusable skills that significantly enhance your Claude Code workflows.
+Skills represent a powerful evolution in AI agent capabilities, enabling Claude to handle specialised tasks with expert-level consistency while maintaining efficient context usage. By following the progressive disclosure principle and best practices outlined in this guide, you can create robust, reusable skills that significantly enhance your Claude Code workflows.
 
 Whether you're automating personal development workflows, codifying team standards, or building enterprise-grade tools, Skills provide the flexibility and structure needed for production-ready AI assistance.
 

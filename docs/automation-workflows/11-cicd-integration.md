@@ -80,7 +80,7 @@ claude -p "Run tests and fix any failures" \
 
 ```bash
 # Initial analysis
-claude -p "Analyze performance issues in the codebase"
+claude -p "Analyse performance issues in the codebase"
 
 # Follow-up with continuation
 claude -p "Now focus specifically on database queries" --continue
@@ -100,7 +100,7 @@ echo "Analysis complete. Cost: $$cost"
 **Text (default)**: Plain text responses suitable for logging and display.
 
 ```bash
-claude -p "Summarize recent changes"
+claude -p "Summarise recent changes"
 ```
 
 **JSON**: Structured output with session metadata, perfect for programmatic parsing.
@@ -136,7 +136,7 @@ Claude Code offers several permission modes for automation:
 | Mode | Description | Use Case |
 |------|-------------|----------|
 | `default` | Allows reads, asks before modifications | Not suitable for CI |
-| `plan` | Analyze only, no modifications | Safe for analysis jobs |
+| `plan` | Analyse only, no modifications | Safe for analysis jobs |
 | `acceptEdits` | Bypasses prompts for file edits | Code review and fixes |
 | `bypassPermissions` | No permission prompts (dangerous) | Sandboxed environments only |
 
@@ -218,7 +218,7 @@ claude -p "Write tests" --resume "$session_id"
 
 ### Authentication Variables
 
-Claude Code prioritizes environment variable API keys over authenticated subscriptions, making them ideal for CI/CD environments.
+Claude Code prioritises environment variable API keys over authenticated subscriptions, making them ideal for CI/CD environments.
 
 #### Primary Authentication
 
@@ -322,7 +322,7 @@ anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
 
 ### Overview
 
-Claude Code GitHub Actions enables AI-powered automation in your development workflow through the official `anthropics/claude-code-action`. By mentioning `@claude` in pull requests or issues, Claude can analyze code, create PRs, implement features, and fix bugs.
+Claude Code GitHub Actions enables AI-powered automation in your development workflow through the official `anthropics/claude-code-action`. By mentioning `@claude` in pull requests or issues, Claude can analyse code, create PRs, implement features, and fix bugs.
 
 ### Quick Setup
 
@@ -365,7 +365,7 @@ name: Claude Code Assistant
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronise]
   issue_comment:
     types: [created]
   issues:
@@ -398,7 +398,7 @@ name: Automated Code Review
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronise]
 
 jobs:
   review:
@@ -444,7 +444,7 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           prompt: |
             Perform a security-focused review with emphasis on:
-            - Authentication and authorization
+            - Authentication and authorisation
             - Input validation and sanitization
             - SQL injection and XSS vulnerabilities
             - Sensitive data exposure
@@ -458,7 +458,7 @@ name: Implement Features from Issues
 
 on:
   issues:
-    types: [labeled]
+    types: [labelled]
 
 jobs:
   implement:
@@ -504,7 +504,7 @@ jobs:
             Review all commits from the last 24 hours.
             Update documentation to reflect:
             - New features and APIs
-            - Changed behavior
+            - Changed behaviour
             - Deprecated functionality
 
             Create or update a PR titled "docs: Daily documentation sync"
@@ -585,7 +585,7 @@ Create `CLAUDE.md` in your repository root to define project-specific guidelines
 
 ## Review Criteria
 
-When reviewing code, prioritize:
+When reviewing code, prioritise:
 1. Security vulnerabilities
 2. Performance implications
 3. Test coverage
@@ -723,7 +723,7 @@ claude-on-demand:
       when: manual
   script:
     - |
-      claude -p "Analyze the changes in this MR" \
+      claude -p "Analyse the changes in this MR" \
         --allowedTools "Bash,Read" \
         --permission-mode plan
 ```
@@ -1119,7 +1119,7 @@ Create `.claude/commands/` directory for reusable workflows:
 ```markdown
 Review this code for security issues:
 
-1. Authentication and authorization vulnerabilities
+1. Authentication and authorisation vulnerabilities
 2. Input validation and sanitization
 3. SQL injection and XSS risks
 4. Sensitive data exposure
@@ -1165,7 +1165,7 @@ claude -p "$(cat .claude/commands/security-review.md)" \
     exit 1
 ```
 
-### 5. Optimize for Cost and Performance
+### 5. Optimise for Cost and Performance
 
 **Target Metrics:**
 - Review job latency: ≤ 3-5 minutes
@@ -1548,7 +1548,7 @@ Integrating Claude Code into CI/CD pipelines transforms AI from a development to
 - **Automate code reviews** with AI-powered analysis that catches issues traditional linters miss
 - **Implement features** directly from issue descriptions with automated PR creation
 - **Fix failing tests** and build errors without manual intervention
-- **Maintain documentation** that stays synchronized with code changes
+- **Maintain documentation** that stays synchronised with code changes
 - **Enforce security standards** through automated vulnerability scanning
 - **Reduce review burden** on senior developers while maintaining code quality
 

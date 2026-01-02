@@ -6,7 +6,7 @@
 - [Running Parallel Claude Instances](#running-parallel-claude-instances)
 - [Setting Up Worktrees for Claude Workflows](#setting-up-worktrees-for-claude-workflows)
 - [Managing Multiple Feature Branches Simultaneously](#managing-multiple-feature-branches-simultaneously)
-- [Worktree Directory Organization](#worktree-directory-organization)
+- [Worktree Directory Organisation](#worktree-directory-organisation)
 - [Context Isolation Between Instances](#context-isolation-between-instances)
 - [Best Practices for Worktree-Based Workflows](#best-practices-for-worktree-based-workflows)
 - [Common Patterns and Use Cases](#common-patterns-and-use-cases)
@@ -160,7 +160,7 @@ git worktree add ../myapp-feature-payments -b feature/stripe-integration
 
 # Navigate and start Claude
 cd ../myapp-feature-payments
-npm install  # Initialize dependencies
+npm install  # Initialise dependencies
 claude
 ```
 
@@ -187,9 +187,9 @@ claude
 # Prompt: "Review this code for potential issues and suggest improvements"
 ```
 
-### Environment Initialization
+### Environment Initialisation
 
-**Critical Step**: Depending on your stack, you need to initialize your development environment in each new worktree. This is essential for Claude to run tests, start dev servers, and execute project-specific commands.
+**Critical Step**: Depending on your stack, you need to initialise your development environment in each new worktree. This is essential for Claude to run tests, start dev servers, and execute project-specific commands.
 
 **JavaScript/TypeScript Projects**
 ```bash
@@ -298,9 +298,9 @@ git worktree prune
 
 ---
 
-## Worktree Directory Organization
+## Worktree Directory Organisation
 
-Where you place worktrees matters significantly for workflow efficiency. Here are recommended organizational strategies:
+Where you place worktrees matters significantly for workflow efficiency. Here are recommended organisational strategies:
 
 ### Strategy 1: Sibling Directories (Most Common)
 
@@ -321,7 +321,7 @@ Place all worktrees as siblings to your main repository:
 - Works well with IDE workspaces
 - Simple relative path calculations
 
-### Strategy 2: Centralized Worktree Directory
+### Strategy 2: Centralised Worktree Directory
 
 Keep all worktrees in a dedicated directory:
 
@@ -343,7 +343,7 @@ Keep all worktrees in a dedicated directory:
 
 ### Strategy 3: Project-Specific Worktree Directories
 
-For organizations with many projects:
+For organisations with many projects:
 
 ```
 ~/projects/
@@ -408,12 +408,12 @@ function w() {
 
 ## Context Isolation Between Instances
 
-One of the most powerful aspects of combining worktrees with Claude Code is the complete context isolation between sessions. Understanding how this works is essential for maximizing productivity.
+One of the most powerful aspects of combining worktrees with Claude Code is the complete context isolation between sessions. Understanding how this works is essential for maximising productivity.
 
 ### How Context Isolation Works
 
 **File System Isolation**
-Each worktree is a completely independent working directory. When Claude Code analyzes your codebase, it reads from its specific worktree's files. Changes in one worktree don't affect others until merged.
+Each worktree is a completely independent working directory. When Claude Code analyses your codebase, it reads from its specific worktree's files. Changes in one worktree don't affect others until merged.
 
 **Session Storage**
 Claude Code stores conversation sessions per project directory. This means:
@@ -564,7 +564,7 @@ Not every task needs a worktree. Consider worktree overhead:
 
 **Rule of Thumb**: If setting up the worktree (creating directory + installing dependencies) takes longer than the task itself, just use branch switching.
 
-### 2. Initialize Dependencies Immediately
+### 2. Initialise Dependencies Immediately
 
 Always run your project's setup commands right after creating a worktree:
 
@@ -572,7 +572,7 @@ Always run your project's setup commands right after creating a worktree:
 git worktree add ../myapp-feature -b feature/new-thing
 cd ../myapp-feature
 
-# Immediately initialize
+# Immediately initialise
 npm install
 cp .env.example .env  # Copy config files
 npm run db:migrate    # Update database schema
@@ -609,9 +609,9 @@ claude --plan
 # Review the plan before allowing execution
 ```
 
-This eliminates anxiety about unauthorized changes and enables true parallelization with confidence.
+This eliminates anxiety about unauthorized changes and enables true parallelisation with confidence.
 
-### 4. Organize Terminals Effectively
+### 4. Organise Terminals Effectively
 
 **Terminal Multiplexers**:
 ```bash
@@ -632,7 +632,7 @@ tmux send-keys 'cd ~/projects/myapp-review && claude' C-m
 **iTerm2 Setup (macOS)**:
 - Create separate terminal tabs for each worktree
 - Enable notifications for when Claude needs attention
-- Use tab coloring to distinguish worktrees
+- Use tab colouring to distinguish worktrees
 - Set up automatic titles based on current directory
 
 ### 5. Regular Cleanup
@@ -798,7 +798,7 @@ claude
 #
 # Provide specific feedback with file locations and suggestions."
 
-# Claude analyzes the code and provides detailed review
+# Claude analyses the code and provides detailed review
 # Leave comments, suggest changes
 
 # Done with review - clean up
@@ -966,8 +966,8 @@ git worktree add ../myapp-tooling -b tooling/faster-build
 cd ../myapp-tooling
 
 claude
-# Prompt: "The build takes 2 minutes. Analyze the build configuration
-# and suggest optimizations. Implement parallel processing if possible."
+# Prompt: "The build takes 2 minutes. Analyse the build configuration
+# and suggest optimisations. Implement parallel processing if possible."
 
 # Claude implements improvements
 # Test in this worktree
@@ -980,7 +980,7 @@ git merge tooling/faster-build
 # All worktrees benefit from the improvement
 ```
 
-**Real Example**: A team reduced API generation time by 18% by having Claude analyze and parallelize their build process, at a cost of just $8 in API usage.
+**Real Example**: A team reduced API generation time by 18% by having Claude analyse and parallelise their build process, at a cost of just $8 in API usage.
 
 ---
 
@@ -1075,7 +1075,7 @@ Worktrees share the Git repository but require separate:
 - Each additional worktree: 400-500 MB (mostly node_modules)
 - Shared .git directory: 50 MB (one copy for all worktrees)
 
-**Optimization**:
+**Optimisation**:
 ```bash
 # Use hard links for node_modules (experimental)
 npm install --prefer-offline --cache ~/.npm-cache
@@ -1121,7 +1121,7 @@ Git worktrees combined with Claude Code represent a powerful paradigm shift in A
 
 1. **Worktrees eliminate context switching**: No more stashing, committing incomplete work, or mental overhead when moving between tasks
 
-2. **Claude Code parallelization**: Run multiple AI agents simultaneously on independent features, reviews, and fixes
+2. **Claude Code parallelisation**: Run multiple AI agents simultaneously on independent features, reviews, and fixes
 
 3. **Context isolation prevents interference**: Each Claude session maintains focused conversation about its specific task
 
